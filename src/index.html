@@ -1,0 +1,37 @@
+<!doctype html>
+<html>
+<head>
+  <base href="/">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="Moniic">
+	<meta name="keyword" content="Moniic">
+	<link rel="shortcut icon" href="assets/img/favicon.png">
+	<title>Moniic</title>
+  <style>
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+    .loader {
+      border: 5px solid rgba(32,168,216,.2);
+      border-top: 5px solid #20a8d8;
+      border-radius: 50%;
+      width: 40px;
+      height: 40px;
+      animation: spin 1s linear infinite;
+      position: absolute;
+      top: calc(50% - 20px);
+      left: calc(50% - 20px);
+    }
+  </style>
+</head>
+<body class="app">
+  <script>window.__theme = 'bs4';</script>
+  <div class="loader"></div>
+
+  <script src="https://js.stripe.com/v3/"></script>
+</body>
+
+</html>

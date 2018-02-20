@@ -1,0 +1,8 @@
+node:
+   image: node:8.9
+   ports:
+    - 4200:4200
+   working_dir: /usr/local/src/moniic-ui-v3
+   volumes:
+    - ./:/usr/local/src/moniic-ui-v3
+   command: bash -c "npm install && npm start"

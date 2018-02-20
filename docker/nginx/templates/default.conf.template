@@ -1,0 +1,11 @@
+server {
+    listen ${NGINX_PORT};
+    root ${DOCUMENT_ROOT};
+
+    index index.html;
+    client_max_body_size 10M;
+
+    location / {
+        try_files ${DOLLAR}uri ${DOLLAR}uri/ /index.html${DOLLAR}is_args${DOLLAR}args;
+    }
+}

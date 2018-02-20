@@ -1,0 +1,84 @@
+//== Colors
+
+$brand-primary:			#ff7f00;
+$brand-success:			#36ff00;
+$brand-info:			#00ccff;
+$brand-warning:			#ffd200;
+$brand-danger:			#ff0024;
+
+//== Scaffolding
+
+$text-color:			#4c4c4c;
+$link-hover-decoration:	none;
+
+//== Typography
+
+$font-family-base:		Roboto, Helvetica, Arial, sans-serif;
+$font-size-base:                  0.875rem;
+
+$line-height-base:		1.625;
+$line-height-computed:	floor(($font-size-base * $line-height-base));
+
+$headings-font-family:	'Open Sans', Helvetica, Arial, sans-serif;
+$headings-font-weight:	400;
+$headings-line-height:	1.1;
+$headings-color:		#333;
+
+//== Components
+
+$btn-font-weight:			500;
+
+$padding-base-vertical:		9px;
+$padding-base-horizontal:	20px;
+
+$padding-large-vertical:	14px;
+$padding-large-horizontal:	25px;
+
+$padding-small-vertical:	4px;
+$padding-small-horizontal:	15px;
+
+$padding-xs-vertical:		1px;
+$padding-xs-horizontal:		5px;
+
+$line-height-large:         $line-height-base;
+$line-height-small:         $line-height-base;
+
+$border-radius-base:		2px;
+$border-radius-large:		3px;
+$border-radius-small:		1px;
+
+//== Buttons
+
+$btn-default-color:			#333;
+$btn-default-bg:			transparent;
+$btn-default-border:		#222;
+
+$btn-primary-color:			$brand-primary;
+$btn-primary-bg:			transparent;
+$btn-primary-border:		$brand-primary;
+
+$btn-success-color:			$brand-success;
+$btn-success-bg:			transparent;
+$btn-success-border:		$brand-success;
+
+$btn-info-color:			$brand-info;
+$btn-info-bg:				transparent;
+$btn-info-border:			$brand-info;
+
+$btn-warning-color:			$brand-warning;
+$btn-warning-bg:			transparent;
+$btn-warning-border:		$brand-warning;
+
+$btn-danger-color:			$brand-danger;
+$btn-danger-bg:				transparent;
+$btn-danger-border:			$brand-danger;
+
+$btn-link-disabled-color:	inherit;
+
+$btn-border-radius-base:	2px;
+$btn-border-radius-large:	2px;
+$btn-border-radius-small:	2px;
+
+//== Grid
+
+$grid-gutter-width:			30px;
