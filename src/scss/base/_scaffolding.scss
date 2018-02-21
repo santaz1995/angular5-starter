@@ -1,0 +1,336 @@
+@import url('https://fonts.googleapis.com/css?family=Allura|Open+Sans:300,400,600,700|Roboto:400,500,700');
+
+:focus,
+:active {
+	outline: none;
+}
+
+@include selection($brand-primary, #fff);
+
+body {
+	overflow: hidden;
+	width: 100%;
+
+	&.loaded {
+		overflow-y: auto;
+	}
+
+	.no-bottom-space {
+		margin-bottom: 0;
+	}
+
+	.top-space {
+		margin-top: $line-height-computed;
+	}
+
+	.bottom-space-half {
+		margin-bottom: $line-height-computed / 2;
+	}
+
+	.bottom-space {
+		margin-bottom: $line-height-computed;
+	}
+
+	.bottom-space-2 {
+		margin-bottom: $line-height-computed * 2;
+	}
+
+	.weight-normal {
+		font-weight: 400;
+	}
+
+	.weight-bold {
+		font-weight: 700;
+	}
+
+	.color-primary {
+		color: $brand-primary;
+	}
+}
+
+.btn,
+a,
+button {
+	&:focus {
+		outline: none;
+	}
+
+	@include transition(color $anim-time, background $anim-time, border-color $anim-time, opacity $anim-time);
+}
+
+img {
+	max-width: 100%;
+}
+
+p,
+ul,
+ol,
+table,
+blockquote,
+figure,
+h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4, .h5, .h6 {
+	margin: 0 0 $line-height-computed;
+}
+
+.bg-secondary {
+	background-color: $bg-secondary;
+}
+
+.bg-secondary-light {
+	background-color: lighten($bg-secondary, 4);
+}
+
+.bg-light-green {
+	background-color: #b8dcd6;
+}
+
+.bg-light-brown {
+	background-color: #e8e1db;
+}
+
+.bg-light-orange {
+	background-color: #f6efde;
+}
+
+.bg-light-gray {
+	background-color: #f6f5f3;
+}
+
+.bg-cyan {
+	background-color: #74d4dd;
+}
+
+.text-light {
+	color: $text-color-inverted;
+
+	blockquote,
+	h1, h2, h3, h4, h5, h6,
+	.h1, .h2, .h3, .h4, .h5, .h6 {
+		color: $text-color-inverted;
+	}
+}
+
+.visibility-hidden {
+	visibility: hidden;
+}
+
+.visibility-visible {
+	visibility: visible;
+}
+
+.animated {
+	-webkit-animation-fill-mode: initial;
+	animation-fill-mode: initial;
+}
+
+/*
+	Corner lines
+*/
+
+.has-corner-line {
+	position: relative;
+
+	&.active,
+	&:hover {
+		.corner {
+			z-index: 1;
+		}
+	}
+
+	.corner,
+	&.corner-anim:hover .corner,
+	&.corner-anim.active .corner {
+		top: -$corner-border-width;
+		right: -$corner-border-width;
+		bottom: -$corner-border-width;
+		left: -$corner-border-width;
+	}
+
+	.corner {
+		position: absolute;
+		z-index: 0;
+		pointer-events: none;
+
+		@include transition(all $anim-time);
+
+		&:before,
+		&:after {
+			position: absolute;
+			content: '';
+			width: $corner-size;
+			height: $corner-size;
+			border-style: solid;
+			border-color: lighten($text-color, 10%);
+		}
+
+		&.large {
+			&:before,
+			&:after {
+				width: $corner-size * 4;
+				height: $corner-size * 4;
+			}
+		}
+
+		&.light {
+			&:before,
+			&:after {
+				border-color: $text-color-inverted;
+			}
+		}
+
+		&.primary {
+			&:before,
+			&:after {
+				border-color: $brand-primary;
+			}
+		}
+
+		&.light-primary {
+			&:before {
+				border-color: $text-color-inverted;
+			}
+
+			&:after {
+				border-color: $brand-primary;
+			}
+		}
+	}
+
+	&.corner-anim {
+		.corner {
+			top: -$corner-border-width * 5;
+			right: -$corner-border-width * 5;
+			bottom: -$corner-border-width * 5;
+			left: -$corner-border-width * 5;
+		}
+	}
+
+	.corner-1 {
+		&:before {
+			top: 0;
+			left: 0;
+			border-width: $corner-border-width 0 0 $corner-border-width;
+		}
+
+		&:after {
+			right: 0;
+			bottom: 0;
+			border-width: 0 $corner-border-width $corner-border-width 0;
+		}
+	}
+
+	.corner-2 {
+		&:before {
+			top: 0;
+			right: 0;
+			border-width: $corner-border-width $corner-border-width 0 0;
+		}
+
+		&:after {
+			bottom: 0;
+			left: 0;
+			border-width: 0 0 $corner-border-width $corner-border-width;
+		}
+	}
+}
+
+/*
+	Preloader
+*/
+
+.preloader {
+	position: fixed;
+	background: #fff;
+	z-index: 10000;
+
+	@include absolute-equal-size("default", false);
+
+	&:after {
+		content: "";
+		background: url($img-path + '/loader.png') center center no-repeat;
+
+		@include animation(blinking .8s infinite alternate);
+		@include absolute-equal-size;
+	}
+}
+
+/*
+	Background layer
+*/
+
+.has-bg-layer {
+	position: relative;
+
+	&:after {
+		content: '';
+		opacity: 0.7;
+		z-index: 0;
+
+		@include absolute-equal-size;
+	}
+
+	&.layer-black:after {
+		background: #000;
+	}
+
+	> * {
+		position: relative;
+		z-index: 1;
+	}
+}
+
+/*
+	Middle wrapper
+*/
+
+.middle-wrapper {
+	display: table;
+	width: 100%;
+
+	.middle-content {
+		display: table-cell;
+		vertical-align: middle;
+	}
+}
+
+/*
+	Equalized section
+*/
+
+.equalized-section {
+	@include transition(height 0.2s);
+}
+
+/*
+	Background images
+*/
+
+/* Sections */
+.bg-img-your-success	{ background-image: img("/backgrounds/cave.jpg"); }
+.bg-img-our-client		{ background-image: img("/backgrounds/bridge.jpg"); }
+.bg-img-awesome-site	{ background-image: img("/backgrounds/mountains.jpg"); }
+.bg-img-pricing-plans	{ background-image: img("/backgrounds/city.jpg"); }
+
+/* Pricing plans */
+.bg-img-pricing-plan-1	{ background-image: img("/backgrounds/personal-plan-1.jpg"); }
+.bg-img-pricing-plan-2	{ background-image: img("/backgrounds/personal-plan-2.jpg"); }
+.bg-img-pricing-plan-3	{ background-image: img("/backgrounds/personal-plan-3.jpg"); }
+.bg-img-pricing-plan-4	{ background-image: img("/backgrounds/personal-plan-4.jpg"); }
+.bg-img-make-for-you	{ background-image: img("/backgrounds/aries.jpg"); }
+
+/* Featured items */
+.bg-img-cowboy			{ background-image: img("/pictures/featured-items/cowboy-classic.png"); }
+.bg-img-beauty-curated	{ background-image: img("/pictures/featured-items/beauty-curated.jpg"); }
+.bg-img-fashion-spring	{ background-image: img("/backgrounds/spring-dress.jpg"); }
+
+/* Intros */
+.bg-img-about			{ background-image: img("/backgrounds/mountains-2.jpg"); }
+.bg-img-portfolio		{ background-image: img("/backgrounds/clouds-mountains.jpg"); }
+.bg-img-shop			{ background-image: img("/backgrounds/people.jpg"); }
+.bg-img-blog			{ background-image: img("/backgrounds/rock.jpg"); }
+
+/* Services */
+.bg-img-webdesign		{ background-image: img("/backgrounds/deer.jpg"); }
+.bg-img-development		{ background-image: img("/backgrounds/pier.jpg"); }
+.bg-img-branding		{ background-image: img("/backgrounds/write.jpg"); }

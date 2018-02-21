@@ -1,0 +1,27 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700&subset=cyrillic-ext,latin-ext');
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,500,700&subset=cyrillic-ext,latin-ext');
+
+.btn,
+a,
+button {
+	&:focus {
+		outline: none;
+	}
+
+	@include transition(color $anim-time, background $anim-time, border-color $anim-time, opacity $anim-time);
+}
+
+img {
+	max-width: 100%;
+}
+
+p,
+ul,
+ol,
+table,
+blockquote,
+figure,
+h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4, .h5, .h6 {
+	margin: 0 0 $line-height-computed;
+}

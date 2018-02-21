@@ -1,0 +1,109 @@
+@media screen and (min-width: 1800px) {
+	
+	/*
+		Menu
+	*/
+	
+	.default-menu > ul > li {
+		margin-right: 25px;
+		margin-left: 25px;
+	}
+	
+	.header-small .default-menu > ul > li {
+		margin-right: 15px;
+		margin-left: 15px;
+	}
+	
+	
+	/*
+		Box square
+	*/
+
+	.box-square {
+		&.height2 {
+			img {
+				max-width: 340px;
+				max-height: none;
+			}
+		}
+		
+		.around-space {
+			padding: 80px 70px 20px;
+		}
+		
+		.main-headline {
+			.maintitle {
+				font-size: 55px;
+			}
+			
+			.subtitle {
+				font-size: 24px;
+			}
+		}
+	}
+
+	/*
+		Slider arrows
+	*/
+	
+	.slider-arrows {
+		&.align-middle {
+			.container-fluid {
+				padding: 0 50px;
+			}
+		}
+	}
+}
+
+@media screen and (min-width: 1200px) {
+	
+	/*
+		Selectors
+	*/
+	
+	.text-right-lg {
+		text-align: right;
+	}
+	
+	/*
+		Sections
+	*/
+	
+	.section {
+		&.horizontal-space {
+			.half-wrapper {
+				max-width: 470px;
+			}
+		}
+	}
+	
+	/*
+		Grid
+	*/
+
+	.col-lg-up-5 {
+		width: 20%;
+	}
+	
+	/*
+		Highlighted title
+	*/
+	
+	.featured-title.title-large .title {
+		font-size: 102px;
+		padding: 0;
+	}
+	
+	/*
+		Action list
+	*/
+
+	.action-list.inline-type-2 li .tab:before {
+		position: absolute;
+		content: '';
+		top: 50%;
+		left: -$grid-gutter-width - 1;
+		width: $grid-gutter-width;
+		border-top: 1px solid darken($bg-secondary, 8);
+	}
+}

@@ -1,0 +1,93 @@
+/*
+	Button tab
+*/
+
+.button-tab {
+	margin-left: -5px;
+	margin-right: -5px;
+	margin-bottom: 0;
+	
+	li {
+		padding: 0;
+		margin: 0 5px $line-height-computed;
+		
+		a {
+			display: block;
+			padding: 11px 20px;
+			border: 1px solid transparent;
+			font-size: 13px;
+			line-height: 16px;
+			font-family: $font-family-secondary;
+			font-weight: 600;
+			text-transform: uppercase;
+			color: lighten($text-color, 10);
+		}
+		
+		&.active a,
+		a:hover {
+			color: $color-dark-text;
+		}
+		
+		.corner {
+			display: none;
+		}
+		
+		&.active {
+			a {
+				background: $bg-tertiary;
+			}
+			
+			.corner {
+				display: block;
+			}
+		}
+	}
+	
+	&.small {
+		li a{
+			padding: 3px 10px;
+		}
+	}
+	
+	&.border {
+		li {
+			&.active a {
+				border-color: transparent;
+				background: $bg-tertiary;
+			}
+			
+			a {
+				border-color: darken($bg-secondary, 7);
+				background: $body-bg;
+			}
+		}
+	}
+}
+
+/*
+	Text tab
+*/
+
+.text-tab {
+	margin-left: -15px;
+	margin-right: -15px;
+	font-size: $fz-section-header-subtitle;
+	font-family: $font-family-secondary;
+	font-weight: 600;
+	
+	a {
+		display: block;
+		color: $color-dark-text;
+	}
+	
+	li {
+		margin-left: 15px;
+		margin-right: 15px;
+		padding: 0;
+		
+		&.active a,
+		a:hover {
+			color: $brand-primary;
+		}
+	}
+}

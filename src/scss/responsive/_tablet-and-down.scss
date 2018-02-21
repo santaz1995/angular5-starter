@@ -1,0 +1,179 @@
+@media screen and (max-width: 991px) {
+	
+	/*
+		Header
+	*/
+	
+	.header-panel {
+		display: none;
+	}
+	
+	.info-head {
+		padding-top: 10px;
+		padding-bottom: 10px;
+		font-size: 10px;
+		
+		ul {
+			margin-left: -5px;
+			margin-right: -5px;
+			
+			li {
+				padding-left: 5px;
+				padding-right: 5px;
+			}
+		}
+		
+		.custom-select-items {
+			ul {
+				margin: 0;
+			}
+		}
+	}
+	
+	/*
+		Menu
+	*/
+	
+	.default-menu .submenu {
+		display: none;
+	}
+	
+	/*
+		Figure content box
+	*/
+	
+	.figure-content-box {
+		.content {
+			margin-left: $grid-gutter-width / 2;
+			margin-right: $grid-gutter-width / 2;
+			padding: 20px;
+		}
+	}
+	
+	/*
+		Filter header
+	*/
+
+	.filter-header {
+		[data-filter-tab] {
+			margin-top: 0;
+
+			&.text-tab {
+				padding-top: 0;
+			}
+		}
+	}
+	
+	/*
+		Media box
+	*/
+	
+	.media-box {
+		&.has-details .box-name {
+			bottom: 100%;
+			padding-top: 15px;
+			background: $bg-secondary;
+
+			&:after {
+				opacity: 0;
+			}
+		}
+	}
+	
+	/*
+		Description box
+	*/
+
+	.description-box {
+		.content {
+			&:after {
+				top: auto;
+				right: auto;
+				bottom: 100%;
+				margin-top: 0;
+				margin-left: -12px;
+			}
+
+			&.left:after,
+			&.right:after {
+				left: 50%;
+				border-right-color: transparent;
+				border-left-color: transparent;
+				border-bottom-color: $body-bg;
+			}
+		}
+	}
+	
+	/*
+		Result view options
+	*/
+	
+	.result-view-options {
+		.form-group {
+			white-space: normal;
+			
+			label,
+			.form-control {
+				display: block;
+			}
+			
+			label {
+				margin: 0 0 5px 0;
+			}
+		}
+		
+		.buttons {
+			margin-top: ceil($line-height-base * $font-size-small + 5);
+		}
+	}
+	
+	/*
+		Product section
+	*/
+
+	.product-section {
+		.product-panel {
+			margin-bottom: $line-height-computed;
+		}
+	}
+	
+	/*
+		Rating
+	*/
+	
+	.br-theme-icon-rating {
+		.br-widget {
+			a {
+				padding: 5px;
+			}
+		}
+	}
+	
+	/*
+		Cart section
+	*/
+	
+	.cart-section {
+		.cart-row {
+			border-bottom: 1px solid darken($bg-secondary, 7);
+			
+			&:last-child {
+				border-bottom: 0;
+			}
+		}
+		
+		.cell-text {
+			padding: 0;
+		}
+		
+		.cart-item .rating {
+			margin-top: 0;
+		}
+		
+		.top-space {
+			line-height: 20px;
+			margin-top: $line-height-computed / 2;
+		}
+	}
+	
+}

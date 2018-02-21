@@ -14,7 +14,9 @@ $link-hover-decoration:	none;
 //== Typography
 
 $font-family-base:		Roboto, Helvetica, Arial, sans-serif;
-$font-size-base:                  0.875rem;
+$font-size-base:		1rem;
+$font-size-large:		1.125rem;
+$font-size-small:		0.875rem;
 
 $line-height-base:		1.625;
 $line-height-computed:	floor(($font-size-base * $line-height-base));
@@ -26,26 +28,26 @@ $headings-color:		#333;
 
 //== Components
 
-$btn-font-weight:			500;
+$btn-font-weight:			600;
 
-$padding-base-vertical:		9px;
-$padding-base-horizontal:	20px;
+$padding-base-vertical:		0.5625rem;
+$padding-base-horizontal:	1.25rem;
 
-$padding-large-vertical:	14px;
-$padding-large-horizontal:	25px;
+$padding-large-vertical:	0.875rem;
+$padding-large-horizontal:	35px;
 
-$padding-small-vertical:	4px;
-$padding-small-horizontal:	15px;
+$padding-small-vertical:	0.25rem;
+$padding-small-horizontal:	0.9375rem;
 
-$padding-xs-vertical:		1px;
-$padding-xs-horizontal:		5px;
+$padding-xs-vertical:		0.0625rem;
+$padding-xs-horizontal:		0.3125rem;
 
 $line-height-large:         $line-height-base;
 $line-height-small:         $line-height-base;
 
-$border-radius-base:		2px;
-$border-radius-large:		3px;
-$border-radius-small:		1px;
+$border-radius-base:		0.125rem;
+$border-radius-large:		0.1875rem;
+$border-radius-small:		0.0625rem;
 
 //== Buttons
 
@@ -75,10 +77,101 @@ $btn-danger-border:			$brand-danger;
 
 $btn-link-disabled-color:	inherit;
 
-$btn-border-radius-base:	2px;
-$btn-border-radius-large:	2px;
-$btn-border-radius-small:	2px;
+$btn-border-radius-base:	0.125rem;
+$btn-border-radius-large:	0.125rem;
+$btn-border-radius-small:	0.125rem;
+
+//== Form states and alerts
+
+$state-success-text:		#16e874;
+$state-success-bg:			lighten($state-success-text, 49);
+$state-success-border:		#16e874;
+
+$state-info-text:			#666;
+$state-info-bg:				lighten($state-info-text, 59);
+$state-info-border:			#666;
+
+$state-warning-text:		#e6d407;
+$state-warning-bg:			lighten($state-warning-text, 51);
+$state-warning-border:		#e6d407;
+
+$state-danger-text:			#ff7f00;
+$state-danger-bg:			lighten($state-danger-text, 49);
+$state-danger-border:		#ff7f00;
+
+//== Forms
+
+$input-bg:					#fff;
+$input-color:				#999;
+$input-border:				#d7d7d7;
+$input-border-focus:		darken($input-border, 10);
+$input-color-placeholder:	#ccc;
+
+$input-height-base:			2.5rem;
+$input-height-large:		3.125rem;
+$input-height-small:		 1.875rem;
+
+$form-group-margin-bottom:	$line-height-computed;
+
+//== Tooltips
+
+$tooltip-color:				#fff;
+$tooltip-bg:				$brand-primary;
+$tooltip-opacity:			1;
+$tooltip-arrow-width:		0.3125rem;
+$tooltip-arrow-color:		$tooltip-bg;
+
+//== Modals
+
+$modal-content-bg:						#fff;
+$modal-inner-padding:					0.625rem;
+$modal-content-border-color:			transparent;
+$modal-content-fallback-border-color:	transparent;
+$modal-backdrop-bg:						#000;
+$modal-backdrop-opacity:				.9;
+$modal-sm:								400px;
+
+//== Breadcrumbs
+
+$breadcrumb-padding-vertical:   0;
+$breadcrumb-padding-vertical:   0;
+$breadcrumb-padding-horizontal: 0;
+$breadcrumb-bg:                 transparent;
+$breadcrumb-color:              $text-color;
+$breadcrumb-active-color:       $text-color;
+
+//== Pagination
+
+$pagination-color:				lighten($text-color, 30);
+$pagination-bg:					transparent;
+$pagination-border:				transparent;
+
+$pagination-hover-color:		$brand-primary;
+$pagination-hover-bg:			transparent;
+$pagination-hover-border:		transparent;
+
+$pagination-active-color:		$text-color;
+$pagination-active-bg:			transparent;
+$pagination-active-border:		transparent;
+
+$pagination-disabled-color:		lighten($text-color, 50);
+$pagination-disabled-bg:		transparent;
+$pagination-disabled-border:	transparent;
+
+//== Type
+
+$hr-border:					#ddd;
+
+//== Z-index master list
+
+$zindex-modal-background:	1080;
+$zindex-modal:				1090;
 
 //== Grid
 
-$grid-gutter-width:			30px;
+$grid-gutter-width:			1.875rem;
+
+//== Tables
+
+$table-cell-padding:		0.625rem;
+$table-border-color:		#eee;
