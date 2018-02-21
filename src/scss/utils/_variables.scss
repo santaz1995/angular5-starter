@@ -1,0 +1,93 @@
+// Image path
+
+$img-path:					"../images";
+$font-path:					"../fonts";
+
+// Colors
+
+$text-color-inverted:		#fff;
+$color-dark-text:			#333;
+$iconbox-icon-color:		#666;
+$dark-header-color:			#666;
+$light-header-color:		#666;
+
+$body-bg:					#fff;
+$bg-header-dark:			#000;
+$bg-header-light:			#fff;
+$bg-inverted:				#333;
+$bg-secondary:				#eee;
+$bg-tertiary:				lighten($bg-secondary, 4);
+
+// Social site colors
+
+$social-colors: (
+	behance: #0b7cff,
+	blogger: #f87f14,
+	dribbble: #f26798,
+	facebook: #4867aa,
+	flickr: #ff0084,
+	google: #dd4c3b,
+	instagram: #bd39a9,
+	linkedin: #007bb6,
+	pinterest: #bd071d,
+	skype: #00aff0,
+	soundcloud: #ff6a22,
+	tumblr: #35465d,
+	twitter: #1da1f2,
+	vk: #4b74a5,
+	youtube: #e62f27
+);
+
+// Fonts
+
+$font-family-secondary:				'Open Sans', Helvetica, Arial, sans-serif;
+$fz-section-header-maintitle:		26px;
+$fz-section-header-subtitle:		14px;
+$fz-secondary-headline-maintitle:	18px;
+$fz-secondary-headline-subtitle:	11px;
+
+// Title icon
+
+$title-icon-size:			40px;
+$title-icon-width:			$title-icon-size * 1.75;
+$title-icon-width-lg:		$title-icon-size * 2.25;
+
+// Section
+
+$section-padding:			6.25rem;
+
+// Sidebar
+
+$sb-box-horizontal-padding:	25px;
+$sb-box-vertical-padding:	20px;
+
+// Pricing box
+
+$pricing-box-padding:		30px;
+
+// Header
+
+$header-height:				80px;
+$header-small-height:		50px;
+$header-icon-size:			22px;
+$infohead-font-size:		11px;
+$infohead-line-height:		20px;
+
+// Navigation
+
+$menu-font-size:			14px;
+$menu-line-height:			24px;
+$menu-item-border-width:	3px;
+
+// Corners lines
+
+$corner-size:				10px;
+$corner-border-width:		2px;
+
+// Progress bar
+
+$progress-bar-height:		4px;
+
+// Animation
+
+$anim-time:					.5s;

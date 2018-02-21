@@ -1,0 +1,119 @@
+// Transition
+
+@mixin transition($value...) {
+	-webkit-transition: $value;
+	-moz-transition: $value;
+	transition: $value;
+}
+
+// Transform
+
+@mixin transform($type, $value...) {
+	-webkit-transform: $type + '(' + $value + ')';
+	-moz-transform: $type + '(' + $value + ')';
+	transform: $type + '(' + $value + ')';
+}
+
+// Border radius
+
+@mixin border-radius($value...) {
+	-webkit-border-radius: $value;
+	-moz-border-radius: $value;
+	border-radius: $value;
+}
+
+// Background size
+
+@mixin background-size($value...) {
+	-webkit-background-size: cover;
+	background-size: cover;
+}
+
+// Box shadow
+
+@mixin box-shadow($value...) {
+	-webkit-box-shadow: $value;
+	-moz-box-shadow: $value;
+	box-shadow: $value;
+}
+
+// Animation
+
+@mixin animation($value...) {
+	-webkit-animation: $value;
+	animation: $value;
+}
+
+// Keyframe
+
+@mixin keyframe($name) {
+	@keyframes #{$name} {
+		@content;
+	}
+
+	@-webkit-keyframes #{$name} {
+		@content;
+	}
+}
+
+// User select
+
+@mixin user-select($value...) {
+	-webkit-user-select: $value;
+	-moz-user-select: $value;
+	-ms-user-select: $value;
+	user-select: $value;
+}
+
+// User select
+
+@mixin touch-action($value...) {
+	-webkit-touch-action: $value;
+	-moz-touch-action: $value;
+	-ms-touch-action: $value;
+	touch-action: $value;
+}
+
+// Placeholder text
+
+@mixin placeholder($color) {
+	&::-moz-placeholder { color: $color; opacity: 1; }
+	&:-ms-input-placeholder { color: $color; }
+	&::-webkit-input-placeholder { color: $color; }
+}
+
+// Selection
+
+@mixin selection($background, $color) {
+	::selection { background-color: $background; color: $color; }
+	::-moz-selection { background-color: $background; color: $color; }
+	::-ms-selection { background-color: $background; color: $color; }
+	::-o-selection { background-color: $background; color: $color; }
+	::-webkit-selection { background-color: $background; color: $color; }
+}
+
+// Absolute equal size
+
+@mixin absolute-equal-size($align: "default", $set-position: true, $set-size: true) {
+	@if ($align == "horizontal") or ($align == "default") {
+		left: 0;
+		right: 0;
+		
+		@if ($set-size == true) {
+			width: 100%;
+		}
+	}
+	
+	@if ($align == "vertical") or ($align == "default") {
+		top: 0;
+		bottom: 0;
+		
+		@if ($set-size == true) {
+			height: 100%;
+		}
+	}
+	
+	@if ($set-position == true) {
+		position: absolute;
+	}
+}

@@ -1,0 +1,38 @@
+.accordion {
+	margin-bottom: $line-height-computed;;
+	
+	.panel {
+		margin-bottom: 0;
+		border: 0;
+		background-color: transparent;
+		
+		@include box-shadow(none);
+		
+		&.active {
+			background: $bg-tertiary;
+		}
+	}
+	
+	&.action-list {
+		&.has-arrow {
+			.active {
+				a:after {
+					@include transform(rotate, 90deg);
+				}
+			}
+		}
+		
+		.active a {
+			border-bottom-color: transparent;
+			background: $body-bg;
+		}
+	}
+	
+	.content {
+		padding: 30px 35px;
+		
+		*:last-child {
+			margin-bottom: 0;
+		}
+	}
+}

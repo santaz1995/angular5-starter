@@ -1,0 +1,42 @@
+.divider {
+	position: relative;
+	display: block;
+	margin: 0 auto $line-height-computed;
+	
+	&.type-1 {
+		width: 4px;
+		height: 17px;
+		border-width: 0 1px 0 1px;
+		border-color: darken($bg-secondary, 7);
+		border-style: solid;
+		
+		&:before,
+		&:after {
+			position: absolute;
+			content: '';
+			top: 8px;
+			width: 50px;
+			border-bottom: 1px solid darken($bg-secondary, 7);
+		}
+
+		&:before {
+			left: -55px;
+		}
+
+		&:after {
+			right: -55px;
+		}
+	}
+	
+	&.type-2 {
+		width: 80px;
+		height: 3px;
+		border: 0;
+		background: $brand-primary;
+	}
+}
+
+hr {
+	margin-top: $line-height-computed * 2;
+	margin-bottom: $line-height-computed * 2;
+}

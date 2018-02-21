@@ -1,0 +1,85 @@
+.modal-section {
+	text-align: left;
+	
+	> .container {
+		margin-top: 30px;
+		margin-bottom: 30px;
+	}
+	
+	.close {
+		position: absolute;
+		top: -15px;
+		right: -15px;
+		width: 30px;
+		height: 30px;
+		line-height: 26px;
+		font-size: 20px;
+		text-align: center;
+		font-weight: 700;
+		font-family: $font-family-secondary;
+		border: 2px solid $modal-content-bg;
+		color: $modal-content-bg;
+		background: $brand-primary;
+		z-index: 1;
+		opacity: 1;
+		text-shadow: none;
+		
+		@include border-radius(100%);
+		
+		&:hover {
+			background: $color-dark-text;
+		}
+	}
+	
+	.product-section {
+		.category-title {
+			margin-top: 45px;
+		}
+		
+		.product-panel {
+			margin-bottom: 0;
+			
+			@include border-radius(0);
+		}
+		
+		.social-list {
+			padding: 0 20px;
+			text-align: center;
+			background: $bg-tertiary;
+			
+			.title {
+				display: block;
+				margin: 0 0 11px;
+			}
+		}
+	}
+	
+	.product-feedback {
+		.row {
+			margin-bottom: 20px;
+		}
+		
+		figure {
+			margin-bottom: 0;
+		}
+		
+		.feedback-title {
+			margin: 0 0 20px;
+			padding: 10px;
+			text-align: center;
+			text-transform: uppercase;
+			background: $bg-tertiary;
+		}
+		
+		.name {
+			margin: 3px 0 0 (-($grid-gutter-width / 2));
+			
+			text-transform: uppercase;
+		}
+	}
+}
+
+.modal-content {
+	@include border-radius(0);
+	@include box-shadow(none);
+}

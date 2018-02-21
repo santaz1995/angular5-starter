@@ -1,0 +1,412 @@
+/*
+	Slideshow
+*/
+
+.slideshow {
+	position: relative;
+	
+	.slider {
+		display: table;
+		width: 100%;
+		background-position: center center;
+		
+		@include background-size(cover);
+		
+		.caption {
+			display: table-cell;
+			vertical-align: middle;
+			margin: auto;
+			text-align: center;
+		}
+	}
+	
+	.scroll-down {
+		display: inline-block;
+		width: 30px;
+		height: 30px;
+		line-height: 26px;
+		font-size: 20px;
+		text-align: center;
+		border: 2px solid #fff;
+		color: #fff;
+		
+		@include border-radius(100%);
+		
+		&:hover {
+			color: $brand-primary;
+			border-color: $brand-primary;
+		}
+	}
+	
+	.bottom {
+		bottom: 45px;
+		line-height: 12px;
+		color: #777;
+		
+		@extend .micro-text;
+		@include absolute-equal-size("horizontal");
+		
+		a {
+			color: #777;
+			
+			&:hover {
+				color: $brand-primary;
+			}
+		}
+	}
+}
+
+/*
+	Posts carousel
+*/
+
+.posts-carousel {
+	.slick-dots {
+		margin-top: $line-height-computed;
+		text-align: center;
+	}
+}
+
+/*
+	Featured carousel 
+*/
+
+.featured-slider {
+	position: relative;
+	
+	.slick-arrow {
+		position: absolute;
+		top: 50%;
+		margin-top: -15px;
+		z-index: 1;
+	}
+	
+	.slick-prev {
+		left: 118px;
+	}
+	
+	.slick-next {
+		right: 118px;
+	}
+	
+	.slick-slide {
+		opacity: 0.3;
+		
+		@include transform(scale, 0.67);
+		@include transition(all, $anim-time);
+		
+		&.slick-current {
+			opacity: 1;
+			
+			@include transform(scale, 1);
+		}
+	}
+}
+
+/*
+	Slider nav
+*/
+
+.slider-nav {
+	position: relative;
+	display: block;
+	margin: 0;
+	padding: 0;
+	
+	&:after {
+		position: relative;
+		content: attr(data-slide-count) + attr(data-text);
+		float: right;
+		margin-left: 12px;
+		line-height: 12px;
+		white-space: nowrap;
+		
+		@extend .micro-text;
+	}
+	
+	&.inline {
+		display: inline-block;
+		vertical-align: middle;
+	}
+	
+	&.text-top {
+		padding-top: 25px;
+		
+		&:after {
+			position: absolute;
+			top: 0;
+			left: 50%;
+			margin: 0;
+			
+			@include transform(translate, -50%, 0);
+		}
+	}
+	
+	&.text-left {
+		ul {
+			float: right;
+		}
+		
+		&:after {
+			float: left;
+			margin-left: 0;
+			margin-right: 12px;
+		}
+	}
+	
+	&.text-hidden:after {
+		display: none;
+	}
+	
+	ul {
+		float: left;
+	}
+	
+}
+
+.slick-dots {
+	padding: 0;
+	margin: 0;
+	font-size: 0;
+	line-height: 0;
+	
+	li {
+		display: inline-block;
+		padding: 4px 0;
+		list-style-type: none;
+
+		button {
+			display: block;
+			width: 20px;
+			height: 4px;
+			padding: 0;
+			margin: 0 3px 0 0;
+			border: 0;
+			text-indent: -9999px;
+			background: lighten($bg-inverted, 7);
+
+			&:hover {
+				opacity: 0.6;
+			}
+		}
+
+		&.slick-active {
+			button {
+				background: $brand-primary;
+			}
+		}
+
+		&:last-child {
+			button {
+				margin-right: 0;
+			}
+		}
+	}
+}
+
+.slider-nav-light,
+.slider-nav.light {
+	.slick-dots li {
+		&.slick-active {
+			button {
+				background: $brand-primary;
+			}
+		}
+
+		button {
+			background: darken($text-color-inverted, 20);
+		}
+	}
+}
+
+.slider-nav-gray,
+.slider-nav.gray {
+	.slick-dots li {
+		&.slick-active {
+			button {
+				background: darken($bg-secondary, 33);
+			}
+		}
+
+		button {
+			background: $bg-secondary;
+		}
+	}
+}
+
+.slider-nav-dark,
+.slider-nav.dark {
+	.slick-dots li.slick-active button {
+		background: #fff;
+	}
+}
+
+/*
+	Product carousel with navigation
+*/
+
+.product-carousel-image {
+	position: relative;
+	margin-bottom: 10px;
+	
+	img {
+		width: 100%;
+	}
+}
+
+.product-carousel-nav {
+	margin: 0 35px 0 -5px;
+	
+	.slick-slide {
+		margin: 0 3px;
+		
+		img {
+			width: 100%;
+			cursor: pointer;
+			border: 2px solid transparent;
+			
+			@include transition(border-color, $anim-time);
+		}
+	}
+	
+	.active {
+		img {
+			border-color: darken($bg-secondary, 10);
+		}
+	}
+	
+	.slick-arrow {
+		position: absolute;
+		right: -35px;
+		width: 30px;
+		height: auto;
+		margin-right: -1px;
+		color: $text-color-inverted;
+		background: $brand-primary;
+		z-index: 1;
+		opacity: 1;
+		
+		&:after {
+			position: absolute;
+			top: 50%;
+			left: 0;
+			width: 100%;
+			margin-top: -10px;
+			font-size: 20px;
+		}
+		
+		&:focus {
+			color: $text-color-inverted;
+		}
+		
+		&:hover {
+			color: $text-color-inverted;
+			background: $color-dark-text;
+			opacity: 1;
+		}
+		
+		&.slick-prev {
+			top: 0;
+			bottom: 50%;
+			margin-bottom: 1px;
+			
+			@include border-radius($border-radius-base $border-radius-base 0 0);
+			
+			&:after {
+				content: "\f104";
+			}
+		}
+
+		&.slick-next {
+			top: 50%;
+			bottom: 0;
+			
+			@include border-radius(0 0 $border-radius-base $border-radius-base);
+
+			&:after {
+				content: "\f105";
+			}
+		}
+	}
+	
+}
+
+/*
+	Slider arrows
+*/
+
+.slick-arrow {
+	position: relative;
+	display: block;
+	width: 30px;
+	height: 30px;
+	padding: 0;
+	border: 0;
+	font-size: 0;
+	line-height: 0;
+	font-family: FontAwesome;
+	color: $text-color;
+	background: transparent;
+	opacity: 0.2;
+	
+	&:after {
+		font-size: 30px;
+		line-height: 1em;
+	}
+	
+	&:focus,
+	&:hover {
+		color: $text-color;
+	}
+	
+	&:hover {
+		opacity: 0.6;
+	}
+	
+	&.slick-prev:after {
+		content: '\f0a8';
+	}
+	
+	&.slick-next:after {
+		content: '\f0a9';
+	}
+	
+	&.slick-disabled {
+		opacity: 0;
+	}
+}
+
+.slider-arrows {
+	&.align-middle {
+		top: 50%;
+		margin-top: -15px;
+		
+		@include absolute-equal-size("horizontal");
+		
+		.slick-prev {
+			float: left;
+		}
+
+		.slick-next {
+			float: right;
+		}
+	}
+	
+	&.dark .slick-arrow {
+		color: #888;
+		opacity: 0.6;
+		
+		&:hover {
+			color: #fff;
+			opacity: 1;
+		}
+	}
+}
+
+/*
+	Transparent item
+*/
+
+/*.has-transparent-item .slick-slide {
+	opacity: 0.5;
+}*/

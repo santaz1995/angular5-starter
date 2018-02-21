@@ -1,0 +1,28 @@
+@media screen and (min-width: 1200px) {
+	
+	/*
+		Selectors
+	*/
+	
+	.text-right-lg {
+		text-align: right;
+	}
+	
+	/*
+		Grid
+	*/
+
+	.col-lg-up-5 {
+		width: 20%;
+	}
+	
+	/*
+		Highlighted title
+	*/
+	
+	.highlighted-title.title-large .title {
+		font-size: 102px;
+		padding: 0;
+	}
+
+}

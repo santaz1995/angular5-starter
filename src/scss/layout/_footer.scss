@@ -1,0 +1,229 @@
+.footer {
+	padding-top: 100px;
+	font-size: $font-size-small;
+	line-height: $font-size-small * 1.5;
+	font-weight: 500;
+	background: $bg-inverted;
+	
+	.top {
+		padding-bottom: 65px;
+		color: darken($text-color-inverted, 20);
+
+		li > a {
+			color: darken($text-color-inverted, 20);
+
+			&:hover {
+				color: $text-color-inverted;
+			}
+		}
+		
+		ul, ol {
+			&.text-uppercase {
+				li {
+					margin-bottom: 15px;
+					font-size: $font-size-small - 1;
+					
+					&:last-child {
+						margin-bottom: 0;
+					}
+				}
+			}
+		}
+	}
+	
+	.bottom {
+		padding-top: $line-height-computed;
+		color: darken($text-color-inverted, 53);
+		background: darken($bg-inverted, 7);
+		
+		.copyright {
+			span {
+				color: #fff;
+			}
+
+			i {
+				color: #ff3f00;
+			}
+			
+			a {
+				color: darken($text-color-inverted, 53);
+				
+				&:hover {
+					text-decoration: underline;
+				}
+			}
+		}
+		
+		.social {
+			margin-left: -10px;
+			margin-right: -10px;
+			font-size: 16px;
+			
+			li {
+				padding: 0 10px;
+			}
+			
+			a {
+				color: darken($text-color-inverted, 53);
+				
+				&:hover {
+					color: $brand-primary;
+					
+					@each $name, $color in $social-colors {
+						&.#{$name} {
+							color: #{$color};
+						}
+					}
+				}
+			}
+		}
+	}
+	
+	.title {
+		position: relative;
+		padding-bottom: 23px;
+		font-size: $font-size-small + 1;
+		font-weight: 700;
+		text-transform: uppercase;
+		color: $text-color-inverted;
+		
+		&:after {
+			position: absolute;
+			content: '';
+			bottom: 0;
+			left: 0;
+			width: 30px;
+			height: 3px;
+			background: $brand-primary;
+		}
+	}
+	
+	.about {
+		img {
+			height: 35px;
+			margin-bottom: 30px;
+		}
+		
+		li {
+			margin-bottom: 5px;
+			padding-left: 40px;
+			
+			i:after {
+				position: absolute;
+				content: '';
+				top: 4px;
+				right: -10px;
+				height: 15px;
+				border-right: 1px solid darken($text-color-inverted, 20);
+			}
+		}
+	}
+	
+	.twitter-feed {
+		margin-bottom: $line-height-computed;
+		
+		p {
+			margin-bottom: $line-height-computed / 2;
+		}
+		
+		.time {
+			display: block;
+			font-size: $font-size-small - 2;
+			font-weight: 400;
+			color: $brand-primary;
+		}
+	}
+	
+	.recent-post-list {
+		margin-bottom: ($line-height-computed - 14);
+		font-size: 0;
+		line-height: 0;
+		
+		li {
+			margin-bottom: 14px;
+			
+			a {
+				position: relative;
+				display: block;
+				
+				img {
+					display: block;
+					width: 100%;
+				}
+				
+				span,
+				&:after {
+					position: absolute;
+					visibility: hidden;
+					opacity: 0;
+					
+					@include transition(all $anim-time);
+				}
+				
+				span {
+					top: 50%;
+					margin-top: -10px;
+					font-size: 11px;
+					line-height: 20px;
+					text-transform: uppercase;
+					text-align: center;
+					font-weight: 600;
+					font-family: $font-family-secondary;
+					color: #fff;
+					z-index: 2;
+					
+					@include absolute-equal-size("horizontal");
+				}
+				
+				&:after {
+					content: '';
+					background: transparentize($brand-primary, 0.1);
+					z-index: 1;
+					
+					@include absolute-equal-size("default", false);
+				}
+				
+				&:hover {
+					span,
+					&:after {
+						visibility: visible;
+						opacity: 1;
+					}
+				}
+			}
+		}
+	}
+}
+
+.go-to-top {
+	position: fixed;
+	display: block;
+	visibility: hidden;
+	right: 20px;
+	bottom: 0;
+	width: 50px;
+	height: 40px;
+	font-size: 20px;
+	line-height: 40px;
+	text-align: center;
+	color: $text-color-inverted;
+	background: darken($bg-inverted, 7);
+	opacity: 0;
+	z-index: 1000;
+	
+	@include transition(all, $anim-time);
+	
+	&:focus {
+		color: $text-color-inverted;
+	}
+	
+	&:hover {
+		color: $text-color-inverted;
+		background: $brand-primary;
+	}
+	
+	&.active {
+		visibility: visible;
+		opacity: 1;
+	}
+}

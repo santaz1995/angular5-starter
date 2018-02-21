@@ -1,0 +1,114 @@
+/*
+	Progress bar
+*/
+
+.progress-bar-list {
+	&.has-img-title {
+		padding-left: 85px;
+		
+		> img {
+			float: left;
+			margin-left: -85px;
+		}
+	}
+	
+	li {
+		text-transform: uppercase;
+		font-size: 12px;
+		font-family: $headings-font-family;
+		color: $bg-inverted;
+		
+		.separator {
+			padding: 0 5px;
+		}
+	}
+	
+	.progress {
+		margin-top: 10px;
+		margin-bottom: 25px;
+	}
+}
+
+.progress {
+	height: $progress-bar-height;
+	background-color: darken($bg-secondary, 5);
+	
+	@include border-radius($progress-bar-height);
+	@include box-shadow(none);
+}
+
+.progress-bar {
+	background-color: lighten($bg-inverted, 7);
+	
+	@include border-radius($progress-bar-height);
+	@include box-shadow(none);
+	@include transition(none);
+}
+
+/*
+	Progress square
+*/
+
+.progress-square {
+	position: relative;
+	font-family: $font-family-secondary;
+	text-align: center;
+	background: $body-bg;
+	
+	&:after {
+		display: block;
+		content: "";
+		padding-bottom: 100%;
+	}
+	
+	.inner {
+		position: absolute;
+		top: 50%;
+		right: 0;
+		left: 0;
+		padding: 0 10px;
+		z-index: 2;
+		
+		@include transform(translate, 0, -50%);
+		
+		.count {
+			display: block;
+			margin-bottom: 3px;
+			font-weight: 700;
+			font-size: 14px;
+			line-height: 25px;
+			color: $color-dark-text;
+			
+			span {
+				font-size: 25px;
+			}
+		}
+		
+		.text {
+			font-size: 11px;
+			line-height: 14px;
+			text-transform: uppercase;
+			color: lighten($text-color, 23);
+		}
+	}
+	
+	svg {
+		z-index: 1;
+		
+		@include absolute-equal-size;
+		
+		.bar {
+			fill: transparent;
+			stroke-width: 10px;
+			stroke-dashoffset: 0;
+			
+			&.bg {
+				stroke: darken($bg-secondary, 5);
+			}
+			
+			&.fill {
+				stroke: lighten($bg-inverted, 7);
+			}
+		}
+	}
+}

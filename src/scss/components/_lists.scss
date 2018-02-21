@@ -1,0 +1,476 @@
+/*
+	Action list
+*/
+
+.action-list {
+	position: relative;
+	
+	&.inline-type-1 {
+		.tab {
+			border-bottom: 2px solid transparent;
+			
+			&:after {
+				position: absolute;
+				visibility: hidden;
+				content: '';
+				left: 50%;
+				bottom: -6px;
+				margin-left: -4px;
+				border-top: 4px solid darken($bg-secondary, 8);
+				border-right: 4px solid transparent;
+				border-left: 4px solid transparent;
+				opacity: 0;
+				
+				@include transition(all, $anim-time);
+			}
+		}
+		
+		.active .tab,
+		a.tab:hover {
+			background: transparent;
+		}
+		
+		.active .tab {
+			border-bottom-color: darken($bg-secondary, 8);
+
+			&:after {
+				visibility: visible;
+				opacity: 1;
+			}
+		}
+	}
+	
+	&.inline-type-2 {
+		.active .tab,
+		a.tab:hover {
+			border-color: transparent;
+		}
+
+		&.active {
+			.corner {
+				visibility: visible;
+				opacity: 1;
+			}
+		}
+
+		> *:first-child {
+			.tab:before {
+				display: none;
+			}
+		}
+
+		.tab {
+			border: 1px solid darken($bg-secondary, 8);
+
+			&.secondary-headline {
+				.maintitle {
+					font-size: $fz-secondary-headline-maintitle * 0.8888889;
+				}
+			}
+			
+			i {
+				margin-top: -15px;
+				font-size: 30px;
+			}
+		}
+
+		.corner {
+			visibility: hidden;
+			opacity: 0;
+		}
+	}
+	
+	&.block-type-1 {
+		> * {
+			margin-top: -1px;
+		}
+		
+		.tab {
+			border-bottom: 1px solid darken($bg-secondary, 8);
+		}
+
+		&.active .tab,
+		a.tab:hover {
+			border-bottom-color: transparent;
+		}
+	}
+	
+	&.has-arrow {
+		.tab {
+			position: relative;
+			padding-right: 40px;
+
+			&:after {
+				position: absolute;
+				display: block;
+				content: '\f0da';
+				top: 50%;
+				right: 20px;
+				width: 20px;
+				height: 20px;
+				margin-top: -10px;
+				line-height: 18px;
+				font-size: 12px;
+				font-family: FontAwesome;
+				border: 1px solid darken($bg-secondary, 7);
+				text-align: center;
+				color: $bg-tertiary;
+				background: darken($bg-secondary, 7);
+
+				@include border-radius(100%);
+				@include transition(all, $anim-time);
+			}
+		}
+
+		.active {
+			.tab:after {
+				color: lighten($text-color, 10%);
+				background: transparent;
+			}
+		}
+	}
+	
+	.active .tab,
+	a.tab:hover {
+		background: $bg-tertiary;
+	}
+
+	.active {
+		.corner {
+			visibility: visible;
+			opacity: 1;
+		}
+	}
+
+	.corner {
+		visibility: hidden;
+		opacity: 0;
+	}
+
+	.tab {
+		position: relative;
+		margin-bottom: 0;
+		padding-top: 20px;
+		padding-bottom: 20px;
+		color: lighten($headings-color, 40);
+
+		i,
+		.maintitle,
+		.subtitle {
+			@include transition(color $anim-time);
+		}
+
+		i {
+			color: lighten($headings-color, 60);
+		}
+
+		.maintitle,
+		.subtitle {
+			color: inherit;
+		}
+	}
+
+	.active,
+	a.tab:hover {
+		i {
+			color: $brand-primary;
+		}
+
+		.maintitle {
+			color: $headings-color;
+		}
+
+		.subtitle {
+			color: lighten($headings-color, 20);
+		}
+	}
+}
+
+/*
+	List icon
+*/
+
+.list-icon {
+	padding-left: 0;
+	font-family: $font-family-secondary;
+	list-style-type: none;
+	
+	&.text-uppercase {
+		font-size: $font-size-small;
+	}
+	
+	li {
+		position: relative;
+		padding-left: 30px;
+		
+		i {
+			position: absolute;
+			display: inline-block;
+			top: 1px;
+			left: 0;
+			width: 20px;
+			text-align: center;
+			line-height: inherit;
+			color: #ccc;
+			
+			&.fa-check {
+				color: #8bb22c;
+			}
+		}
+	}
+}
+
+/*
+	Navigation list
+*/
+
+.nav-list {
+	padding: 0;
+	font-size: $font-size-small;
+	font-weight: 600;
+	list-style-type: none;
+	font-family: $headings-font-family;
+	
+	&.has-arrow {
+		li a {
+			padding-left: 15px;
+			
+			&:before {
+				position: absolute;
+				content: "\f105";
+				top: 50%;
+				left: 0;
+				margin-top: -10px;
+				line-height: 20px;
+				font-weight: 400;
+				font-family: FontAwesome;
+			}
+		}
+	}
+	
+	li {
+		position: relative;
+		border-bottom: 1px solid darken($bg-tertiary, 5);
+	
+		&:first-child {
+			border-top: 1px solid darken($bg-tertiary, 5);
+		}
+		
+		&.active,
+		&:hover {
+			> a {
+				color: $brand-primary;
+			}
+		}
+		
+		&.active:after {
+			position: absolute;
+			content: "";
+			bottom: -2px;
+			left: 0;
+			width: 80px;
+			height: 3px;
+			background: $brand-primary;
+		}
+	}
+	
+	a {
+		position: relative;
+		display: block;
+		padding: 10px 25px 10px 0;
+		color: $text-color;
+		
+		.count {
+			position: absolute;
+			right: 0;
+			top: 50%;
+			font-weight: 400;
+			margin-top: -10px;
+			line-height: 20px;
+			color: darken($bg-tertiary, 17);
+		}
+	}
+}
+
+.sb-content {
+	.nav-list {
+		li {
+			margin-bottom: 5px;
+			
+			a {
+				padding-top: 3px;
+				padding-bottom: 3px;
+			}
+			
+			&:first-child {
+				border-top: 0;
+			}
+			
+			&:last-child {
+				border-bottom: 0;
+			}
+		}
+	}
+}
+
+/*
+	Item lists
+*/
+
+.item-list-headline {
+	position: relative;
+	margin-bottom: $line-height-computed;
+	padding-right: 65px;
+	font-size: $font-size-small;
+	
+	.title {
+		margin-bottom: 3px;
+		font-size: $font-size-large;
+		text-transform: uppercase;
+	}
+	
+	p {
+		margin-bottom: 0;
+	}
+	
+	.arrows {
+		position: absolute;
+		right: 0;
+		bottom: 0;
+		
+		a {
+			display: block;
+			float: left;
+			width: 30px;
+			height: 30px;
+			margin-left: 2px;
+			font-size: 14px;
+			line-height: 30px;
+			text-align: center;
+			color: #fff;
+			background: darken($bg-secondary, 6);
+			opacity: 1;
+			
+			@include border-radius(2px);
+			
+			&:hover {
+				opacity: 0.5;
+			}
+		}
+	}
+}
+
+/*
+	List inline
+*/
+
+.list-inline {
+	&.has-divider {
+		li {
+			padding-left: 10px;
+			padding-right: 10px;
+			
+			&:before {
+				position: relative;
+				content: '|';
+				left: -10px;
+			}
+			
+			&:first-child:before {
+				display: none;
+			}
+		}
+	}
+}
+
+/*
+	Link list
+*/
+
+.link-list {
+	font-size: $font-size-small;
+	
+	a {
+		color: lighten($text-color, 10);
+		
+		&:hover {
+			color: $brand-primary;
+		}
+	}
+}
+
+/*
+	Button list
+*/
+
+.btn-list {
+	.btn {
+		margin-bottom: 10px;
+	}
+}
+
+/*
+	Tag list
+*/
+
+.tag-list {
+	margin-left: -5px;
+	margin-right: -5px;
+	font-size: 0;
+	
+	li {
+		width: 50%;
+		padding: 0 5px;
+	}
+	
+	.btn {
+		display: block;
+		margin-bottom: 10px;
+		white-space: normal;
+	}
+}
+
+/*
+	Social list
+*/
+
+.social-list {
+	.title {
+		display: inline-block;
+		margin-right: 10px;
+		font-family: $font-family-secondary;
+		font-size: $font-size-small;
+		line-height: 30px;
+		text-transform: uppercase;
+		font-weight: 600;
+		color: lighten($text-color, 30);
+	}
+	
+	ul {
+		display: inline-block;
+		margin-left: 0;
+	}
+	
+	li {
+		padding: 0;
+	}
+	
+	a {
+		display: block;
+		width: 30px;
+		height: 30px;
+		margin-bottom: 5px;
+		line-height: 30px;
+		font-size: 14px;
+		text-align: center;
+		color: #fff;
+		background: #ccc;
+		
+		@include border-radius($border-radius-base);
+	
+		&:hover {
+			color: $text-color-inverted;
+			background: $color-dark-text;
+		}
+	}
+}

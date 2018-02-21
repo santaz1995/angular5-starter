@@ -1,0 +1,22 @@
+@media screen and (min-width: 768px) {
+	
+	/*
+		Icon box
+	*/
+	
+	.icon-box.align-right {
+		padding-left: 0;
+		padding-right: $title-icon-width;
+		text-align: right;
+		
+		&.circle-icon {
+			padding-left: 0;
+			padding-right: $title-icon-width-lg;
+		}
+		
+		> i {
+			right: 0;
+			left: auto;
+		}
+	}
+}

@@ -1,0 +1,74 @@
+@media screen and (min-width: 992px) and (max-width: 1199px) {
+	
+	/*
+		Selectors
+	*/
+	
+	.text-right-md {
+		text-align: right;
+	}
+	
+	/*
+		Grid
+	*/
+
+	.col-md-up-5 {
+		width: 20%;
+	}
+	
+	/*
+		Header
+	*/
+	
+	.header-search.active form {
+		width: 170px;
+	}
+	
+	/*
+		Menu
+	*/
+	
+	.default-menu {
+		> ul > li {
+			margin-left: 5px;
+			margin-right: 5px;
+			
+			> a {
+				font-size: 12px;
+			}	
+		}
+	}
+	
+	/*
+		Box square
+	*/
+
+	.box-square {
+		&.height2 {
+			img {
+				max-height: 150px;
+			}
+		}
+	}
+	
+	/*
+		Result view options
+	*/
+	
+	.result-view-options {
+		.form-group .form-control {
+			width: 150px;
+		}
+	}
+	
+	
+	/*
+		Product section
+	*/
+
+	.product-section {
+		.product-panel {
+			margin-bottom: $line-height-computed;
+		}
+	}
+}

@@ -1,0 +1,63 @@
+@media screen and (max-width: 991px) {
+	
+	
+	
+}
+
+@media screen and (max-width: 767px) {
+	
+	.text-center-xs {
+		text-align: center;
+	}
+	
+	/*
+		Grid
+	*/
+
+	.col-xs-up-5 {
+		width: 20%;
+	}
+	
+	/*
+		Highlighted title
+	*/
+	
+	.highlighted-title {
+		&.has-corner-line {
+			padding: 3px 23px;
+		}
+		
+		.title {
+			font-size: 32px;
+		}
+	}
+	
+	.highlighted-content {
+		img,
+		.highlighted-title {
+			margin-bottom: 20px;
+		}
+	}
+	
+	/*
+		Progress bar
+	*/
+	
+	.progress-bar-list.has-img-title {
+		padding-left: 65px;
+		
+		> img {
+			margin-left: -65px;
+		}
+	}
+	
+	/*
+		Tabs
+	*/
+	
+	.tab-button li {
+		margin-top: 10px;
+		margin-bottom: 10px;
+	}
+	
+}
