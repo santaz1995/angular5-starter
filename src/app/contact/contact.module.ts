@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ContactComponent } from 'app/contact/contact.component';
-import { ContactRoutingModule } from 'app/contact/contact-routing.module';
+import { ContactRouting } from 'app/contact/contact.routing';
 import { AgmCoreModule } from '@agm/core';
 import { ReactiveFormsModule } from '@angular/forms';
 import { ContactService } from 'app/common/services/contact.service';
@@ -9,7 +9,7 @@ import { ContactService } from 'app/common/services/contact.service';
 @NgModule({
   imports: [
     CommonModule,
-    ContactRoutingModule,
+    ContactRouting,
     AgmCoreModule.forRoot({
       apiKey: ''
     }),
