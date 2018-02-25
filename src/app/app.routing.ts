@@ -19,6 +19,10 @@ export const routes: Routes = [
         path: 'ability',
         loadChildren: './ability/ability.module#AbilityModule',
       },
+      {
+        path: 'portfolio',
+        loadChildren: './portfolio/portfolio.module#PortfolioModule',
+      },
     ]
   },
 ];
