@@ -5,7 +5,6 @@ import 'rxjs/add/operator/map';
 import { AppConfig } from './app-config.service';
 
 @Injectable()
-
 export class ContactService {
 
   constructor(private http: HttpClient,
