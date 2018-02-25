@@ -11,6 +11,10 @@ export const routes: Routes = [
         path: '',
         loadChildren: './index/index.module#IndexModule',
       },
+      {
+        path: 'contact',
+        loadChildren: './contact/contact.module#ContactModule',
+      },
     ]
   },
 ];
