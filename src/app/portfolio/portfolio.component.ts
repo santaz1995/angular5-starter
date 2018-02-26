@@ -1,11 +1,15 @@
 import { Component } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
-import { ContactService } from 'app/common/services/contact.service';
-import { ToastrService } from 'ngx-toastr';
+import { ngIfAnimation } from 'app/common/animations/ngIf.animation';
 
 @Component({
   templateUrl: 'portfolio.component.html',
+  animations: [ngIfAnimation]
 })
 export class PortfolioComponent {
 
+  public filterSetting = 'all';
+
+  public filters(filterSetting: string = 'all') {
+    this.filterSetting = filterSetting;
+  }
 }
