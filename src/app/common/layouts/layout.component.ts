@@ -5,4 +5,9 @@ import { Component } from '@angular/core';
 })
 export class LayoutComponent {
 
+  public isShowMenu: boolean;
+
+  public toggleMenu() {
+    this.isShowMenu = !this.isShowMenu;
+  }
 }

@@ -1321,10 +1321,12 @@ blockquote {
     transform: scale(1);
   }
   .menu-button {
-    position: fixed;
+    position: static;
+    padding-top: 57px;
+    float: left;
   }
   .inner {
-    padding: 100px 0 50px;
+    padding: 60px 0 50px;
   }
   .logo {
     display: inline-block;
