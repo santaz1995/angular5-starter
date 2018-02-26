@@ -10,6 +10,10 @@ export class PortfolioComponent {
   public filterSetting = 'all';
 
   public filters(filterSetting: string = 'all') {
-    this.filterSetting = filterSetting;
+    this.filterSetting = null;
+    setTimeout(() => {
+      this.filterSetting = filterSetting;
+    }, 270);
+
   }
 }
