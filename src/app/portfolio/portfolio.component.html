@@ -1,0 +1,74 @@
+<!-- .header-section -->
+<section class="header-section middle-wrapper has-bg-layer layer-black bg-img-portfolio">
+  <div class="middle-content">
+    <div class="container">
+      <img src="../../assets/images/pictures/deer.png" alt="Deer" />
+
+      <h1 class="title">Portfolio</h1>
+
+      <ul class="breadcrumb">
+        <li><a routerLink="/" title="Home">Home</a></li>
+        <li>/</li>
+        <li>Portfolio</li>
+      </ul>
+    </div>
+  </div>
+</section>
+<!-- /.header-section -->
+<!-- /.container-fluid -->
+<section class="container-fluid">
+  <div class="section half-space text-center">
+    <ul class="list-inline button-tab border" data-filter-tab="portfolio">
+      <li class="has-corner-line" [ngClass]="filterSetting === 'all' ? 'active' : ''">
+        <a (click)="filters('all')">All work</a>
+        <span class="corner corner-1"></span>
+        <span class="corner corner-2"></span>
+      </li>
+      <li class="has-corner-line" [ngClass]="filterSetting === 'PHP' ? 'active' : ''">
+        <a (click)="filters('PHP')">PHP</a>
+        <span class="corner corner-1"></span>
+        <span class="corner corner-2"></span>
+      </li>
+      <li class="has-corner-line" [ngClass]="filterSetting === 'Laravel' ? 'active' : ''">
+        <a (click)="filters('Laravel')">Laravel</a>
+        <span class="corner corner-1"></span>
+        <span class="corner corner-2"></span>
+      </li>
+    </ul>
+  </div>
+
+  <!-- .row.bottom-space-2.filter-section -->
+  <div id="portfolio" class="row bottom-space-2 filter-section">
+    <div class="col-md-3 col-sm-6 col-xs-12 item" *ngIf="filterSetting === 'PHP' || filterSetting === 'all'" [@ngIfAnimation]>
+      <a class="invert-zoom" data-lightbox="portfolio-5" href="../../assets/images/pictures/lightbox/lightbox-3-1.jpg">
+        <img src="../../assets/images/pictures/lightbox/lightbox-3-1.jpg" alt="" />
+      </a>
+    </div>
+
+    <div class="col-md-3 col-sm-6 col-xs-12 item">
+      <a class="invert-zoom" data-lightbox="portfolio-5" href="../../assets/images/pictures/lightbox/lightbox-3-2.jpg">
+        <img src="../../assets/images/pictures/lightbox/lightbox-3-2.jpg" alt="" />
+      </a>
+    </div>
+
+    <div class="col-md-3 col-sm-6 col-xs-12 item">
+      <a class="invert-zoom" data-lightbox="portfolio-5" href="../../assets/images/pictures/lightbox/lightbox-3-3.jpg">
+        <img src="../../assets/images/pictures/lightbox/lightbox-3-3.jpg" alt="" />
+      </a>
+    </div>
+
+    <div class="col-md-3 col-sm-6 col-xs-12 item">
+      <a class="invert-zoom" data-lightbox="portfolio-5" href="../../assets/images/pictures/lightbox/lightbox-3-4.jpg">
+        <img src="../../assets/images/pictures/lightbox/lightbox-3-4.jpg" alt="" />
+      </a>
+    </div>
+
+    <div class="col-md-3 col-sm-6 col-xs-12 item">
+      <a class="invert-zoom" data-lightbox="portfolio-5" href="../../assets/images/pictures/lightbox/lightbox-3-5.jpg">
+        <img src="../../assets/images/pictures/lightbox/lightbox-3-5.jpg" alt="" />
+      </a>
+    </div>
+  </div>
+  <!-- /.row.bottom-space-2.filter-section -->
+</section>
+<!-- /.container-fluid -->
