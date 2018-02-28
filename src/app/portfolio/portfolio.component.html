@@ -18,57 +18,166 @@
 <!-- /.container-fluid -->
 <section class="container-fluid">
   <div class="section half-space text-center">
-    <ul class="list-inline button-tab border" data-filter-tab="portfolio">
-      <li class="has-corner-line" [ngClass]="filterSetting === 'all' ? 'active' : ''">
-        <a (click)="filters('all')">All work</a>
+    <ul class="list-inline button-tab border">
+      <li class="has-corner-line" [ngClass]="portfolioType === 'all' ? 'active' : ''">
+        <a (click)="filterPortfolioType('all')">All work</a>
         <span class="corner corner-1"></span>
         <span class="corner corner-2"></span>
       </li>
-      <li class="has-corner-line" [ngClass]="filterSetting === 'PHP' ? 'active' : ''">
-        <a (click)="filters('PHP')">PHP</a>
+      <li class="has-corner-line" [ngClass]="portfolioType === 'PHP' ? 'active' : ''">
+        <a (click)="filterPortfolioType('PHP')">PHP</a>
         <span class="corner corner-1"></span>
         <span class="corner corner-2"></span>
       </li>
-      <li class="has-corner-line" [ngClass]="filterSetting === 'Laravel' ? 'active' : ''">
-        <a (click)="filters('Laravel')">Laravel</a>
+      <li class="has-corner-line" [ngClass]="portfolioType === 'Laravel' ? 'active' : ''">
+        <a (click)="filterPortfolioType('Laravel')">Laravel</a>
         <span class="corner corner-1"></span>
         <span class="corner corner-2"></span>
       </li>
     </ul>
   </div>
-
-  <!-- .row.bottom-space-2.filter-section -->
-  <div id="portfolio" class="row bottom-space-2 filter-section">
-    <div class="col-md-3 col-sm-6 col-xs-12 item" *ngIf="filterSetting === 'PHP' || filterSetting === 'all'" [@ngIfAnimation]>
-      <a class="invert-zoom" data-lightbox="portfolio-5" href="../../assets/images/pictures/lightbox/lightbox-3-1.jpg">
-        <img src="../../assets/images/pictures/lightbox/lightbox-3-1.jpg" alt="" />
-      </a>
-    </div>
-
-    <div class="col-md-3 col-sm-6 col-xs-12 item" *ngIf="filterSetting === 'Laravel' || filterSetting === 'all'" [@ngIfAnimation]>
-      <a class="invert-zoom" data-lightbox="portfolio-5" href="../../assets/images/pictures/lightbox/lightbox-3-2.jpg">
-        <img src="../../assets/images/pictures/lightbox/lightbox-3-2.jpg" alt="" />
-      </a>
-    </div>
-
-    <div class="col-md-3 col-sm-6 col-xs-12 item" *ngIf="filterSetting === 'Laravel' || filterSetting === 'all'" [@ngIfAnimation]>
-      <a class="invert-zoom" data-lightbox="portfolio-5" href="../../assets/images/pictures/lightbox/lightbox-3-3.jpg">
-        <img src="../../assets/images/pictures/lightbox/lightbox-3-3.jpg" alt="" />
-      </a>
-    </div>
-
-    <div class="col-md-3 col-sm-6 col-xs-12 item" *ngIf="filterSetting === 'PHP' || filterSetting === 'all'" [@ngIfAnimation]>
-      <a class="invert-zoom" data-lightbox="portfolio-5" href="../../assets/images/pictures/lightbox/lightbox-3-4.jpg">
-        <img src="../../assets/images/pictures/lightbox/lightbox-3-4.jpg" alt="" />
-      </a>
-    </div>
-
-    <div class="col-md-3 col-sm-6 col-xs-12 item" *ngIf="filterSetting === 'Laravel' || filterSetting === 'all'" [@ngIfAnimation]>
-      <a class="invert-zoom" data-lightbox="portfolio-5" href="../../assets/images/pictures/lightbox/lightbox-3-5.jpg">
-        <img src="../../assets/images/pictures/lightbox/lightbox-3-5.jpg" alt="" />
-      </a>
-    </div>
-  </div>
-  <!-- /.row.bottom-space-2.filter-section -->
 </section>
 <!-- /.container-fluid -->
+<section id="portfolio" class="row collapsed mediabox-zebra-bottom filter-section">
+
+  <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 item">
+    <article class="media-box dark has-corner-line">
+      <div class="box-content">
+        <figure class="item-slider" data-slider-nav="item-slider-nav-1">
+          <img src="../../assets/images/pictures/portfolio/portfolio-2-5.jpg" alt="" />
+        </figure>
+
+        <a href="portfolio-detail2.html" class="box-layer text-center">
+          <div class="inner">
+            <div class="img">
+              <img src="../../assets/images/logo-gray-250x52.png" alt="AP68 Creative Studio" />
+            </div>
+
+            <h4 class="title">Furniture <strong>Design</strong></h4>
+
+            View all work
+          </div>
+        </a>
+      </div>
+      <span class="corner corner-1 primary"></span>
+      <span class="corner corner-2 primary"></span>
+    </article>
+  </div>
+  <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 item">
+    <article class="media-box dark has-corner-line">
+      <div class="box-content">
+        <figure class="item-slider" data-slider-nav="item-slider-nav-1">
+          <img src="../../assets/images/pictures/portfolio/portfolio-2-5.jpg" alt="" />
+        </figure>
+
+        <a href="portfolio-detail2.html" class="box-layer text-center">
+          <div class="inner">
+            <div class="img">
+              <img src="../../assets/images/logo-gray-250x52.png" alt="AP68 Creative Studio" />
+            </div>
+
+            <h4 class="title">Furniture <strong>Design</strong></h4>
+
+            View all work
+          </div>
+        </a>
+      </div>
+      <span class="corner corner-1 primary"></span>
+      <span class="corner corner-2 primary"></span>
+    </article>
+  </div>
+  <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 item">
+    <article class="media-box dark has-corner-line">
+      <div class="box-content">
+        <figure class="item-slider" data-slider-nav="item-slider-nav-1">
+          <img src="../../assets/images/pictures/portfolio/portfolio-2-5.jpg" alt="" />
+        </figure>
+
+        <a href="portfolio-detail2.html" class="box-layer text-center">
+          <div class="inner">
+            <div class="img">
+              <img src="../../assets/images/logo-gray-250x52.png" alt="AP68 Creative Studio" />
+            </div>
+
+            <h4 class="title">Furniture <strong>Design</strong></h4>
+
+            View all work
+          </div>
+        </a>
+      </div>
+      <span class="corner corner-1 primary"></span>
+      <span class="corner corner-2 primary"></span>
+    </article>
+  </div>
+  <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 item">
+    <article class="media-box dark has-corner-line">
+      <div class="box-content">
+        <figure class="item-slider" data-slider-nav="item-slider-nav-1">
+          <img src="../../assets/images/pictures/portfolio/portfolio-2-5.jpg" alt="" />
+        </figure>
+
+        <a href="portfolio-detail2.html" class="box-layer text-center">
+          <div class="inner">
+            <div class="img">
+              <img src="../../assets/images/logo-gray-250x52.png" alt="AP68 Creative Studio" />
+            </div>
+
+            <h4 class="title">Furniture <strong>Design</strong></h4>
+
+            View all work
+          </div>
+        </a>
+      </div>
+      <span class="corner corner-1 primary"></span>
+      <span class="corner corner-2 primary"></span>
+    </article>
+  </div>
+  <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 item">
+    <article class="media-box dark has-corner-line">
+      <div class="box-content">
+        <figure class="item-slider" data-slider-nav="item-slider-nav-1">
+          <img src="../../assets/images/pictures/portfolio/portfolio-2-5.jpg" alt="" />
+        </figure>
+
+        <a href="portfolio-detail2.html" class="box-layer text-center">
+          <div class="inner">
+            <div class="img">
+              <img src="../../assets/images/logo-gray-250x52.png" alt="AP68 Creative Studio" />
+            </div>
+
+            <h4 class="title">Furniture <strong>Design</strong></h4>
+
+            View all work
+          </div>
+        </a>
+      </div>
+      <span class="corner corner-1 primary"></span>
+      <span class="corner corner-2 primary"></span>
+    </article>
+  </div>
+  <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 item">
+    <article class="media-box dark has-corner-line">
+      <div class="box-content">
+        <figure class="item-slider" data-slider-nav="item-slider-nav-1">
+          <img src="../../assets/images/pictures/portfolio/portfolio-2-5.jpg" alt="" />
+        </figure>
+
+        <a href="portfolio-detail2.html" class="box-layer text-center">
+          <div class="inner">
+            <div class="img">
+              <img src="../../assets/images/logo-gray-250x52.png" alt="AP68 Creative Studio" />
+            </div>
+
+            <h4 class="title">Furniture <strong>Design</strong></h4>
+
+            View all work
+          </div>
+        </a>
+      </div>
+      <span class="corner corner-1 primary"></span>
+      <span class="corner corner-2 primary"></span>
+    </article>
+  </div>
+
+
+</section>
