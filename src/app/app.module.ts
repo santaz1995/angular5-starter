@@ -4,9 +4,9 @@ import { AppRoutingModule } from 'app/app.routing';
 import { AppComponent } from 'app/app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LayoutComponent } from './common/layouts/layout.component';
-import { ToastrModule } from 'ngx-toastr';
 import { HttpClientModule } from '@angular/common/http';
 import { AppConfig } from 'app/common/services/app-config.service';
+import { PushNotificationsModule } from 'ng-push';
 
 @NgModule({
   imports: [
@@ -14,7 +14,7 @@ import { AppConfig } from 'app/common/services/app-config.service';
     BrowserAnimationsModule,
     HttpClientModule,
     AppRoutingModule,
-    ToastrModule.forRoot(),
+    PushNotificationsModule
   ],
   declarations: [
     LayoutComponent,
