@@ -7,13 +7,16 @@ import { ngIfAnimation } from 'app/common/animations/ngIf.animation';
 })
 export class PortfolioComponent {
 
-  public filterSetting = 'all';
+  public portfolioType = 'all';
 
-  public filters(filterSetting: string = 'all') {
-    this.filterSetting = null;
+  /**
+   * Filters for portfolio type
+   * @param {string} portfolioType
+   */
+  public filterPortfolioType(portfolioType: string = 'all') {
+    this.portfolioType = null;
     setTimeout(() => {
-      this.filterSetting = filterSetting;
+      this.portfolioType = portfolioType;
     }, 270);
-
   }
 }

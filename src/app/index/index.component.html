@@ -5,21 +5,16 @@
       <div class="caption">
         <div class="container">
           <div class="featured-content">
-
             <p class="img">
               <img src="../../assets/images/logo-creative-studio-expedition.png" alt="Creative Studio Expedition logo" />
             </p>
-
             <div class="featured-title title-large has-corner-line">
               <h1 class="title"><strong>We are</strong> AP68</h1>
-
               <span class="corner large corner-1 light-primary"></span>
             </div>
-
             <p class="text">
               <span class="highlighted">We make it easy for you to experience creativity</span>
             </p>
-
             <a href="#" class="scroll-down">
               <span class="sr-only">Scroll down</span>
               <i class="fa fa-angle-double-down"></i>
@@ -32,13 +27,10 @@
       <div class="caption">
         <div class="container">
           <div class="featured-content">
-
             <div class="featured-title title-large has-corner-line">
               <h1 class="title"><strong>We are</strong> AP68</h1>
-
               <span class="corner large corner-1 light-primary"></span>
             </div>
-
             <p class="text">
               <span class="highlighted">We make it easy for you to experience creativity</span>
             </p>
@@ -47,13 +39,6 @@
       </div>
     </article>
   </swiper>
-
-  <div class="slider-arrows align-middle dark">
-    <div class="container">
-      <a href="#" class="slick-prev">Previous</a>
-      <a href="#" class="slick-next">Next</a>
-    </div>
-  </div>
   <div class="bottom">
     <div class="container">
       <div class="pull-right"><a routerLink="contact">Contact Me <i class="fa fa-angle-right"></i></a></div>
@@ -78,26 +63,441 @@
 
       <div class="divider type-1"></div>
     </div>
-    <!-- TODO: add tabs see http://preview.themeforest.net/item/ap68-creative-multipurpose-html5-template/full_screen_preview/19446921?redirect_back=true&ref=cirvitis/images/backgrounds/aries.jpg  -->
+    <ul class="row collapsed list-unstyled action-list inline-type-1 bottom-space-2" role="tablist">
+      <li role="presentation" class="col-lg-3 col-sm-6" [ngClass]="experienceType === 'angular' || !experienceType ? 'active' : ''">
+        <a class="tab secondary-headline has-icon" (click)="chooseExperience('angular')">
+          <i class="fi flaticon-pen"></i>
+          <h3 class="maintitle">Angular <strong>Design</strong></h3>
+          <p class="subtitle">8 years experience in design</p>
+        </a>
+      </li>
+      <li role="presentation" class="col-lg-3 col-sm-6" [ngClass]="experienceType === 'php' ? 'active' : ''">
+        <a class="tab secondary-headline has-icon" (click)="chooseExperience('php')">
+          <i class="fi flaticon-layers-1"></i>
+          <h3 class="maintitle">Web <strong>Development</strong></h3>
+          <p class="subtitle">6 years experience in coding</p>
+        </a>
+      </li>
+      <li role="presentation" class="col-lg-3 col-sm-6" [ngClass]="experienceType === 'node' ? 'active' : ''">
+        <a class="tab secondary-headline has-icon" (click)="chooseExperience('node')">
+          <i class="fi flaticon-photo-camera"></i>
+          <h3 class="maintitle">Pro <strong>Photography</strong></h3>
+          <p class="subtitle">12 years experience in photograph</p>
+        </a>
+      </li>
+      <li role="presentation" class="col-lg-3 col-sm-6" [ngClass]="experienceType === 'qwe' ? 'active' : ''">
+        <a class="tab secondary-headline has-icon" (click)="chooseExperience('qwe')">
+          <i class="fi flaticon-paper"></i>
+          <h3 class="maintitle">Branding <strong>Design</strong></h3>
+          <p class="subtitle">4 years experience in advertishing</p>
+        </a>
+      </li>
+    </ul>
+    <section>
+      <article class="row tab-pane" *ngIf="experienceType === 'angular' || !experienceType">
+        <div class="col-12 col-lg-6 mx-auto">
+          <div class="figure-with-title bottom-space">
+            <img src="../../assets/images/pictures/work-in-design-since-1980.jpg" alt="Work in design since 1980's" />
+
+            <div class="text bottom-left">
+              <img src="../../assets/images/logo-light-3-250x52.png" alt="AP68 Creative Studio logo" />
+              <h2 class="title">Web <strong>design</strong></h2>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-lg-6 mx-auto">
+          <div class="secondary-headline">
+            <h3 class="maintitle">Professional <strong>Team</strong></h3>
+            <h4 class="subtitle">8 years experience in design</h4>
+          </div>
+
+          <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit diam, sed diam nonummy
+            nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim
+            ad minim veniam consectetuer adipiscing elit diam, sed diam nonummy nibh euismod
+            tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
+
+          <!-- .progress-bar-list -->
+          <div class="progress-bar-list has-img-title">
+            <img src="../../assets/images/pictures/our-team-skills.png" alt="Our Team Skills" />
+
+            <ul class="list-unstyled">
+              <li>
+                <strong><span class="counter-up" data-percentage>95</span>%</strong> <span class="separator">|</span> Adobe <strong>Photoshop</strong>
+                <div class="progress">
+                  <div class="progress-bar" role="progressbar" data-percent="95" aria-valuemin="0" aria-valuemax="100">
+                  </div>
+                </div>
+              </li>
+
+              <li>
+                <strong><span class="counter-up" data-percentage>36</span>%</strong> <span class="separator">|</span> Mac <strong>Sketch</strong>
+                <div class="progress">
+                  <div class="progress-bar" role="progressbar" data-percent="36" aria-valuemin="0" aria-valuemax="100">
+                  </div>
+                </div>
+              </li>
+
+              <li>
+                <strong><span class="counter-up" data-percentage>90</span>%</strong> <span class="separator">|</span> Adobe <strong>Illustrator</strong>
+                <div class="progress">
+                  <div class="progress-bar" role="progressbar" data-percent="90" aria-valuemin="0" aria-valuemax="100">
+                  </div>
+                </div>
+              </li>
+
+              <li>
+                <strong><span class="counter-up" data-percentage>82</span>%</strong> <span class="separator">|</span> Affinity <strong>Designer</strong>
+                <div class="progress">
+                  <div class="progress-bar" role="progressbar" data-percent="82" aria-valuemin="0" aria-valuemax="100">
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <!-- /.progress-bar-list -->
+        </div>
+      </article>
+      <article class="row tab-pane" *ngIf="experienceType === 'php'">
+        <div class="col-12 col-lg-6 mx-auto">
+          <div class="figure-with-title bottom-space">
+            <img src="../../assets/images/pictures/work-in-design-since-1980.jpg" alt="Work in design since 1980's" />
+
+            <div class="text bottom-left">
+              <img src="../../assets/images/logo-light-3-250x52.png" alt="AP68 Creative Studio logo" />
+              <h2 class="title">Web <strong>design</strong></h2>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-lg-6 mx-auto">
+          <div class="secondary-headline">
+            <h3 class="maintitle">Professional <strong>Team</strong></h3>
+            <h4 class="subtitle">8 years experience in design</h4>
+          </div>
+
+          <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit diam, sed diam nonummy
+            nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim
+            ad minim veniam consectetuer adipiscing elit diam, sed diam nonummy nibh euismod
+            tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
+
+          <!-- .progress-bar-list -->
+          <div class="progress-bar-list has-img-title">
+            <img src="../../assets/images/pictures/our-team-skills.png" alt="Our Team Skills" />
+
+            <ul class="list-unstyled">
+              <li>
+                <strong><span class="counter-up" data-percentage>95</span>%</strong> <span class="separator">|</span> Adobe <strong>Photoshop</strong>
+                <div class="progress">
+                  <div class="progress-bar" role="progressbar" data-percent="95" aria-valuemin="0" aria-valuemax="100">
+                  </div>
+                </div>
+              </li>
+
+              <li>
+                <strong><span class="counter-up" data-percentage>36</span>%</strong> <span class="separator">|</span> Mac <strong>Sketch</strong>
+                <div class="progress">
+                  <div class="progress-bar" role="progressbar" data-percent="36" aria-valuemin="0" aria-valuemax="100">
+                  </div>
+                </div>
+              </li>
+
+              <li>
+                <strong><span class="counter-up" data-percentage>90</span>%</strong> <span class="separator">|</span> Adobe <strong>Illustrator</strong>
+                <div class="progress">
+                  <div class="progress-bar" role="progressbar" data-percent="90" aria-valuemin="0" aria-valuemax="100">
+                  </div>
+                </div>
+              </li>
+
+              <li>
+                <strong><span class="counter-up" data-percentage>82</span>%</strong> <span class="separator">|</span> Affinity <strong>Designer</strong>
+                <div class="progress">
+                  <div class="progress-bar" role="progressbar" data-percent="82" aria-valuemin="0" aria-valuemax="100">
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <!-- /.progress-bar-list -->
+        </div>
+      </article>
+      <article class="row tab-pane" *ngIf="experienceType === 'node'">
+        <div class="col-12 col-lg-6 mx-auto">
+          <div class="figure-with-title bottom-space">
+            <img src="../../assets/images/pictures/work-in-design-since-1980.jpg" alt="Work in design since 1980's" />
+
+            <div class="text bottom-left">
+              <img src="../../assets/images/logo-light-3-250x52.png" alt="AP68 Creative Studio logo" />
+              <h2 class="title">Web <strong>design</strong></h2>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-lg-6 mx-auto">
+          <div class="secondary-headline">
+            <h3 class="maintitle">Professional <strong>Team</strong></h3>
+            <h4 class="subtitle">8 years experience in design</h4>
+          </div>
+
+          <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit diam, sed diam nonummy
+            nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim
+            ad minim veniam consectetuer adipiscing elit diam, sed diam nonummy nibh euismod
+            tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
+
+          <!-- .progress-bar-list -->
+          <div class="progress-bar-list has-img-title">
+            <img src="../../assets/images/pictures/our-team-skills.png" alt="Our Team Skills" />
+
+            <ul class="list-unstyled">
+              <li>
+                <strong><span class="counter-up" data-percentage>95</span>%</strong> <span class="separator">|</span> Adobe <strong>Photoshop</strong>
+                <div class="progress">
+                  <div class="progress-bar" role="progressbar" data-percent="95" aria-valuemin="0" aria-valuemax="100">
+                  </div>
+                </div>
+              </li>
+
+              <li>
+                <strong><span class="counter-up" data-percentage>36</span>%</strong> <span class="separator">|</span> Mac <strong>Sketch</strong>
+                <div class="progress">
+                  <div class="progress-bar" role="progressbar" data-percent="36" aria-valuemin="0" aria-valuemax="100">
+                  </div>
+                </div>
+              </li>
+
+              <li>
+                <strong><span class="counter-up" data-percentage>90</span>%</strong> <span class="separator">|</span> Adobe <strong>Illustrator</strong>
+                <div class="progress">
+                  <div class="progress-bar" role="progressbar" data-percent="90" aria-valuemin="0" aria-valuemax="100">
+                  </div>
+                </div>
+              </li>
+
+              <li>
+                <strong><span class="counter-up" data-percentage>82</span>%</strong> <span class="separator">|</span> Affinity <strong>Designer</strong>
+                <div class="progress">
+                  <div class="progress-bar" role="progressbar" data-percent="82" aria-valuemin="0" aria-valuemax="100">
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <!-- /.progress-bar-list -->
+        </div>
+      </article>
+      <article class="row tab-pane" *ngIf="experienceType === 'qwe'">
+        <div class="col-12 col-lg-6 mx-auto">
+          <div class="figure-with-title bottom-space">
+            <img src="../../assets/images/pictures/work-in-design-since-1980.jpg" alt="Work in design since 1980's" />
+
+            <div class="text bottom-left">
+              <img src="../../assets/images/logo-light-3-250x52.png" alt="AP68 Creative Studio logo" />
+              <h2 class="title">Web <strong>design</strong></h2>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-lg-6 mx-auto">
+          <div class="secondary-headline">
+            <h3 class="maintitle">Professional <strong>Team</strong></h3>
+            <h4 class="subtitle">8 years experience in design</h4>
+          </div>
+
+          <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit diam, sed diam nonummy
+            nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim
+            ad minim veniam consectetuer adipiscing elit diam, sed diam nonummy nibh euismod
+            tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
+
+          <!-- .progress-bar-list -->
+          <div class="progress-bar-list has-img-title">
+            <img src="../../assets/images/pictures/our-team-skills.png" alt="Our Team Skills" />
+
+            <ul class="list-unstyled">
+              <li>
+                <strong><span class="counter-up" data-percentage>95</span>%</strong> <span class="separator">|</span> Adobe <strong>Photoshop</strong>
+                <div class="progress">
+                  <div class="progress-bar" role="progressbar" data-percent="95" aria-valuemin="0" aria-valuemax="100">
+                  </div>
+                </div>
+              </li>
+
+              <li>
+                <strong><span class="counter-up" data-percentage>36</span>%</strong> <span class="separator">|</span> Mac <strong>Sketch</strong>
+                <div class="progress">
+                  <div class="progress-bar" role="progressbar" data-percent="36" aria-valuemin="0" aria-valuemax="100">
+                  </div>
+                </div>
+              </li>
+
+              <li>
+                <strong><span class="counter-up" data-percentage>90</span>%</strong> <span class="separator">|</span> Adobe <strong>Illustrator</strong>
+                <div class="progress">
+                  <div class="progress-bar" role="progressbar" data-percent="90" aria-valuemin="0" aria-valuemax="100">
+                  </div>
+                </div>
+              </li>
+
+              <li>
+                <strong><span class="counter-up" data-percentage>82</span>%</strong> <span class="separator">|</span> Affinity <strong>Designer</strong>
+                <div class="progress">
+                  <div class="progress-bar" role="progressbar" data-percent="82" aria-valuemin="0" aria-valuemax="100">
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <!-- /.progress-bar-list -->
+        </div>
+      </article>
+    </section>
   </div>
 </section>
 <!-- /.section -->
 
 <!-- .container-fluid.no-gap-xs.section.bg-secondary -->
-<!-- TODO: add tabs see http://preview.themeforest.net/item/ap68-creative-multipurpose-html5-template/full_screen_preview/19446921?redirect_back=true&ref=cirvitis/images/backgrounds/aries.jpg  -->
+<section class="container-fluid no-gap-xs section bg-secondary">
+
+  <!-- .container -->
+  <div class="container">
+    <div class="row">
+      <div class="col-12 col-lg-5">
+        <div class="section-header text-center text-left-lg">
+          <h3 class="subtitle">We Created High Quality Items</h3>
+          <h2 class="maintitle">Our <strong>Awesome Portfolio</strong></h2>
+        </div>
+      </div>
+      <div class="col-12 col-lg-7 text-center text-right-lg">
+        <ul class="list-inline button-tab small">
+          <li class="has-corner-line" [ngClass]="portfolioType === 'all' ? 'active' : ''">
+            <a (click)="filterPortfolioType('all')">All work</a>
+            <span class="corner corner-1"></span>
+            <span class="corner corner-2"></span>
+          </li>
+          <li class="has-corner-line" [ngClass]="portfolioType === 'PHP' ? 'active' : ''">
+            <a (click)="filterPortfolioType('PHP')">PHP</a>
+            <span class="corner corner-1"></span>
+            <span class="corner corner-2"></span>
+          </li>
+          <li class="has-corner-line" [ngClass]="portfolioType === 'Laravel' ? 'active' : ''">
+            <a (click)="filterPortfolioType('Laravel')">Laravel</a>
+            <span class="corner corner-1"></span>
+            <span class="corner corner-2"></span>
+          </li>
+          <li class="has-corner-line" [ngClass]="portfolioType === 'qwe' ? 'active' : ''">
+            <a (click)="filterPortfolioType('qwe')">qwe</a>
+            <span class="corner corner-1"></span>
+            <span class="corner corner-2"></span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <!-- /.container -->
+
+  <!-- .container-fluid -->
+  <div class="container-fluid">
+    <div id="portfolio" class="row filter-section">
+      <div class="col-12 col-sm-6 col-md-4 col-lg-3" *ngIf="portfolioType === 'PHP' || portfolioType === 'all'" [@ngIfAnimation]>
+        <!-- .media-box.light -->
+        <article class="media-box light has-corner-line">
+          <div class="box-content">
+            <figure class="item-slider" data-slider-nav="item-slider-nav-1">
+              <img src="../../assets/images/pictures/portfolio/portfolio-1-1.jpg" alt="" />
+            </figure>
+            <a href="portfolio-detail1.html" class="box-layer text-center">
+              <div class="inner">
+                <div class="img">
+                  <img src="../../assets/images/logo-gray-250x52.png" alt="AP68 Creative Studio" />
+                </div>
+                <h4 class="title">Furniture <strong>Design</strong></h4>
+                View all work
+              </div>
+            </a>
+          </div>
+          <span class="corner corner-1"></span>
+          <span class="corner corner-2"></span>
+        </article>
+        <!-- /.media-box.light -->
+      </div>
+      <div class="col-12 col-sm-6 col-md-4 col-lg-3" *ngIf="portfolioType === 'Laravel' || portfolioType === 'all'" [@ngIfAnimation]>
+        <!-- .media-box.light -->
+        <article class="media-box light has-corner-line">
+          <div class="box-content">
+            <figure class="item-slider" data-slider-nav="item-slider-nav-1">
+              <img src="../../assets/images/pictures/portfolio/portfolio-1-1.jpg" alt="" />
+            </figure>
+            <a href="portfolio-detail1.html" class="box-layer text-center">
+              <div class="inner">
+                <div class="img">
+                  <img src="../../assets/images/logo-gray-250x52.png" alt="AP68 Creative Studio" />
+                </div>
+                <h4 class="title">Furniture <strong>Design</strong></h4>
+                View all work
+              </div>
+            </a>
+          </div>
+          <span class="corner corner-1"></span>
+          <span class="corner corner-2"></span>
+        </article>
+        <!-- /.media-box.light -->
+      </div>
+      <div class="col-12 col-sm-6 col-md-4 col-lg-3" *ngIf="portfolioType === 'Laravel' || portfolioType === 'all'" [@ngIfAnimation]>
+        <!-- .media-box.light -->
+        <article class="media-box light has-corner-line">
+          <div class="box-content">
+            <figure class="item-slider" data-slider-nav="item-slider-nav-1">
+              <img src="../../assets/images/pictures/portfolio/portfolio-1-1.jpg" alt="" />
+            </figure>
+            <a href="portfolio-detail1.html" class="box-layer text-center">
+              <div class="inner">
+                <div class="img">
+                  <img src="../../assets/images/logo-gray-250x52.png" alt="AP68 Creative Studio" />
+                </div>
+                <h4 class="title">Furniture <strong>Design</strong></h4>
+                View all work
+              </div>
+            </a>
+          </div>
+          <span class="corner corner-1"></span>
+          <span class="corner corner-2"></span>
+        </article>
+        <!-- /.media-box.light -->
+      </div>
+      <div class="col-12 col-sm-6 col-md-4 col-lg-3" *ngIf="portfolioType === 'qwe' || portfolioType === 'all'"  [@ngIfAnimation]>
+        <!-- .media-box.light -->
+        <article class="media-box light has-corner-line">
+          <div class="box-content">
+            <figure class="item-slider" data-slider-nav="item-slider-nav-1">
+              <img src="../../assets/images/pictures/portfolio/portfolio-1-1.jpg" alt="" />
+            </figure>
+            <a href="portfolio-detail1.html" class="box-layer text-center">
+              <div class="inner">
+                <div class="img">
+                  <img src="../../assets/images/logo-gray-250x52.png" alt="AP68 Creative Studio" />
+                </div>
+                <h4 class="title">Furniture <strong>Design</strong></h4>
+                View all work
+              </div>
+            </a>
+          </div>
+          <span class="corner corner-1"></span>
+          <span class="corner corner-2"></span>
+        </article>
+        <!-- /.media-box.light -->
+      </div>
+    </div>
+  </div>
+  <!-- /.container-fluid -->
+</section>
 <!-- /.container-fluid.no-gap-xs.section.bg-secondary -->
 
 <!-- .section -->
 <section class="section">
   <div class="container">
     <div class="row">
-      <div class="col-sm-6" data-animate="fadeInLeft">
+      <div class="col-sm-6">
         <figure>
           <img src="../../assets/images/pictures/we-are-creative-studio.jpg" alt="We are Creative Studio" />
         </figure>
       </div>
-
-      <div class="col-sm-6" data-animate="fadeInRight">
+      <div class="col-sm-6">
         <div class="section-header">
           <h3 class="subtitle">We Work With Passion</h3>
           <h2 class="maintitle">We are <strong>Creative Studio</strong></h2>
@@ -127,7 +527,7 @@
 <!-- .section -->
 <section class="section bg-img-your-success">
   <div class="container">
-    <div class="featured-content text-center" data-animate="fadeInUp">
+    <div class="featured-content text-center">
       <p class="img">
         <img src="../../assets/images/logo-ultimate-originality.png" alt="Ultimate Originality logo" />
       </p>
@@ -155,44 +555,94 @@
   </div>
 </section>
 <!-- /.section -->
-
-<!-- .partner-carousel -->
-<!-- TODO: add carusel see http://preview.themeforest.net/item/ap68-creative-multipurpose-html5-template/full_screen_preview/19446921?redirect_back=true&ref=cirvitis/images/backgrounds/aries.jpg  -->
-<!-- /.partner-carousel -->
-
-<!-- .section -->
-<!-- TODO: WHY COOSE US -->
-<!-- /.section -->
-
-<!-- .partner-carousel -->
-<!-- TODO: Counter -->
-<!-- /.partner-carousel -->
-
-<!-- .section.bg-secondary -->
-<!-- /.section.bg-secondary -->
-
 <!-- .section-bar -->
-<section class="section-bar has-bg-layer layer-black bg-img-awesome-site">
+<section class="container-fluid no-gap-xs section">
   <div class="container">
-    <div class="row">
-      <div class="col-md-9 text-center">
-        <div class="featured-title title-small has-corner-line">
-          <h3 class="title">We created <strong>awesome &amp; powerful</strong> website for you</h3>
+    <div class="section-header text-center">
+      <div class="row">
+        <div class="col-12">
+          <h3 class="subtitle">News from Blog</h3>
+          <h2 class="maintitle">Latest <strong>news</strong></h2>
 
-          <span class="corner corner-1 light"></span>
-          <span class="corner corner-2 light"></span>
+          <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit diam, sed diam nonummy nibh
+            euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
         </div>
       </div>
-      <div class="col-md-3 text-right text-center-sm text-center-xs">
-        <p>
-          <a href="#" class="btn btn-lg btn-simple-to-border btn-white">Purchase theme</a>
-        </p>
-      </div>
+
+      <div class="divider type-1"></div>
     </div>
+  </div>
+
+  <!-- .posts-carousel.scroll-slider.bottom-space -->
+  <div class="row">
+
+    <!-- .media-box.post-box.dark -->
+    <article class="col-12 col-sm-6 col-md-4 col-lg-3 media-box dark">
+      <a href="blog-detail.html" class="figure">
+        <img src="../../assets/images/pictures/posts/post-1-1.jpg" alt="" />
+        <div class="caption">
+          <p>Super responsive <strong>clean &amp; professional</strong> web design for business</p>
+        </div>
+      </a>
+
+      <div class="box-options large clearfix">
+        <div class="pull-left">
+          <p class="option"><time datetime="2016-08-26">26 august 2016</time></p>
+        </div>
+      </div>
+    </article>
+    <!-- /.media-box.post-box.dark -->
+
+    <!-- .media-box.post-box.dark -->
+    <article class="col-12 col-sm-6 col-md-4 col-lg-3 media-box dark">
+      <a href="blog-detail.html" class="figure">
+        <img src="../../assets/images/pictures/posts/post-1-2.jpg" alt="" />
+        <div class="caption">
+          <p>Super responsive <strong>clean &amp; professional</strong> web design for business</p>
+        </div>
+      </a>
+
+      <div class="box-options large clearfix">
+        <div class="pull-left">
+          <p class="option"><time datetime="2016-08-26">26 august 2016</time></p>
+        </div>
+      </div>
+    </article>
+    <!-- /.media-box.post-box.dark -->
+
+    <!-- .media-box.post-box.dark -->
+    <article class="col-12 col-sm-6 col-md-4 col-lg-3 media-box dark">
+      <a href="blog-detail.html" class="figure">
+        <img src="../../assets/images/pictures/posts/post-1-3.jpg" alt="" />
+        <div class="caption">
+          <p>Super responsive <strong>clean &amp; professional</strong> web design for business</p>
+        </div>
+      </a>
+
+      <div class="box-options large clearfix">
+        <div class="pull-left">
+          <p class="option"><time datetime="2016-08-26">26 august 2016</time></p>
+        </div>
+      </div>
+    </article>
+    <!-- /.media-box.post-box.dark -->
+
+    <!-- .media-box.post-box.dark -->
+    <article class="col-12 col-sm-6 col-md-4 col-lg-3 media-box dark">
+      <a href="blog-detail.html" class="figure">
+        <img src="../../assets/images/pictures/posts/post-1-2.jpg" alt="" />
+        <div class="caption">
+          <p>Super responsive <strong>clean &amp; professional</strong> web design for business</p>
+        </div>
+      </a>
+
+      <div class="box-options large clearfix">
+        <div class="pull-left">
+          <p class="option"><time datetime="2016-08-26">26 august 2016</time></p>
+        </div>
+      </div>
+    </article>
+    <!-- /.media-box.post-box.dark -->
   </div>
 </section>
 <!-- /.section-bar -->
-
-<!-- .container-fluid.no-gap-xs.section -->
-<!-- TODO: ADD BLOGS -->
-<!-- /.container-fluid.no-gap-xs.section -->
