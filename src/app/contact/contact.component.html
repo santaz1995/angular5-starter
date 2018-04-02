@@ -20,18 +20,23 @@
           <h3 class="subtitle text-uppercase primary">AP68 Creative Studio support</h3>
           <h2 class="maintitle"><strong>Send email</strong> for Me</h2>
         </div>
-        <form id="contact-form" [formGroup]="contactForm" (ngSubmit)="submit()">
+        <form id="contact-form" [formGroup]="contactForm" (ngSubmit)="submit()" novalidate>
           <div class="form-group">
             <input class="form-control" type="text" name="name" placeholder="Your Name" formControlName="name"/>
+            <app-form-error-message [field]="contactForm.controls.name"></app-form-error-message>
           </div>
           <div class="form-group">
-            <input class="form-control" type="text" name="title" placeholder="Title" formControlName="title"/>
+            <input class="form-control" type="text" name="subject" placeholder="Subject" formControlName="subject"/>
+            <app-form-error-message [field]="contactForm.controls.subject"></app-form-error-message>
           </div>
           <div class="form-group">
             <input class="form-control" type="email" name="email" placeholder="Your Email" formControlName="email"/>
+            <app-form-error-message [field]="contactForm.controls.email"></app-form-error-message>
           </div>
           <div class="form-group">
-            <textarea class="form-control" cols="20" rows="5" name="message" placeholder="Your Message" formControlName="message"></textarea>
+            <textarea class="form-control" cols="20" rows="5" name="message" placeholder="Your Message"
+                      formControlName="message"></textarea>
+            <app-form-error-message [field]="contactForm.controls.message"></app-form-error-message>
           </div>
           <div class="form-group text-right text-left-xs">
             <button type="submit" class="btn btn-angular btn-simple-to-border btn-primary">Submit message</button>
@@ -52,20 +57,20 @@
           <li><a href="#">Behance</a></li>
         </ul>
         <div class="map bottom-space" id="map_canvas">
-          <agm-map
-            [latitude]="lat"
-            [longitude]="lng"
-            [zoom]="zoom"
-            [disableDefaultUI]="false"
-            [zoomControl]="false">
-            <agm-marker
-              *ngFor="let m of markers; let i = index"
-              [latitude]="m.lat"
-              [longitude]="m.lng"
-              [label]="m.label"
-              [markerDraggable]="m.draggable">
-            </agm-marker>
-          </agm-map>
+          <!--<agm-map-->
+          <!--[latitude]="lat"-->
+          <!--[longitude]="lng"-->
+          <!--[zoom]="zoom"-->
+          <!--[disableDefaultUI]="false"-->
+          <!--[zoomControl]="false">-->
+          <!--<agm-marker-->
+          <!--*ngFor="let m of markers; let i = index"-->
+          <!--[latitude]="m.lat"-->
+          <!--[longitude]="m.lng"-->
+          <!--[label]="m.label"-->
+          <!--[markerDraggable]="m.draggable">-->
+          <!--</agm-marker>-->
+          <!--</agm-map>-->
         </div>
       </div>
     </article>

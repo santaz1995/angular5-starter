@@ -2,7 +2,6 @@ import { Component } from '@angular/core';
 import { SwiperConfigInterface } from 'ngx-swiper-wrapper';
 import { ngIfAnimation } from 'app/common/animations/ngIf.animation';
 
-
 @Component({
   templateUrl: 'index.component.html',
   animations: [ngIfAnimation]

@@ -4,7 +4,8 @@ import { ContactComponent } from 'app/contact/contact.component';
 import { ContactRouting } from 'app/contact/contact.routing';
 import { AgmCoreModule } from '@agm/core';
 import { ReactiveFormsModule } from '@angular/forms';
-import { ContactService } from 'app/common/services/contact.service';
+import { FormErrorMessageModule } from 'app/common/components/form-error-message/form-error-message.module';
+import { ApiFeedbackService } from 'app/common/services/data/api-feedback.service';
 
 @NgModule({
   imports: [
@@ -14,12 +15,16 @@ import { ContactService } from 'app/common/services/contact.service';
       apiKey: ''
     }),
     ReactiveFormsModule,
+
+
+
+    FormErrorMessageModule,
   ],
   declarations: [
     ContactComponent
   ],
   providers: [
-    ContactService,
+    ApiFeedbackService,
   ]
 })
 export class ContactModule { }

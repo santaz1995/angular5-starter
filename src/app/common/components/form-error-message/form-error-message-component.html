@@ -1,0 +1,12 @@
+<mat-error *ngIf="(field.hasError('email') && !field.hasError('backendError')) && !field.hasError('required')">
+  Please enter a valid email address
+</mat-error>
+<mat-error *ngIf="(field.hasError('minlength') && !field.hasError('backendError')) && !field.hasError('required')">
+  The minimum length is {{field.errors.minlength.requiredLength}} characters. {{field.errors.minlength.actualLength}} characters entered
+</mat-error>
+<mat-error *ngIf="field.hasError('backendError') && !field.hasError('email') && !field.hasError('required')">
+  {{field.errors.backendError}}
+</mat-error>
+<mat-error *ngIf="!field.untouched && field.hasError('required')">
+  Field is <strong>required</strong>
+</mat-error>
