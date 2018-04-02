@@ -1,29 +1,22 @@
 import { Component } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
-import { ContactService } from 'app/common/services/contact.service';
-import { ToastrService } from 'ngx-toastr';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { handleBackendErrors } from 'app/common/app-helpers';
+import { NotificationsService } from 'angular2-notifications';
+import { ApiFeedback } from 'app/common/entities/api-feedback';
+import { ApiFeedbackService } from 'app/common/services/data/api-feedback.service';
 
 @Component({
   templateUrl: 'contact.component.html',
 })
 export class ContactComponent {
 
-  public zoom = 8;
-
-  public markers: GoogleMapsMarket[] = [
-    {
-      lat: 50.059821,
-      lng: 3.1995638,
-      label: 'Home',
-      draggable: true
-    },
-  ];
-
   public contactForm: FormGroup;
 
+  private handleBackendErrors = handleBackendErrors;
+
   constructor(private fb: FormBuilder,
-              private toastr: ToastrService,
-              private contactService: ContactService) {
+              private feedbackService: ApiFeedbackService,
+              private notification: NotificationsService) {
     this.createForm();
   }
 
@@ -31,10 +24,11 @@ export class ContactComponent {
    * Submit contact form
    */
   public submit(): void {
-    this.contactService.sendEmail(this.contactForm.value).subscribe( () => {
+    this.feedbackService.sendEmail(this.contactForm.value as ApiFeedback).subscribe( () => {
+      this.notification.success('Success', 'Success');
       this.contactForm.reset();
-      this.toastr.success('Success send message to our manager. Please wait for contact with manager', 'Success send message');
     }, (errorData) => {
+      this.handleBackendErrors(this.contactForm, errorData.error.violations);
     });
   }
 
@@ -42,14 +36,11 @@ export class ContactComponent {
    * Form contact
    */
   private createForm(): void {
-    this.contactForm = this.fb.group({
-      email: [null],
-      title: [null],
-      name: [null],
-      message: [null],
+    this.contactForm = new FormGroup({
+      email: new FormControl(null, [Validators.required, Validators.email]),
+      subject: new FormControl(null, [Validators.required]),
+      name: new FormControl(null, [Validators.required]),
+      message: new FormControl(null, [Validators.required]),
     });
   }
 }
-/**
- TODO: ADD VALIDATION
- */
