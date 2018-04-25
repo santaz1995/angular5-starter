@@ -3,6 +3,7 @@
 # compiled output
 /dist
 /tmp
+package-lock.json
 
 # dependencies
 node_modules

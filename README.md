@@ -2,7 +2,7 @@
 
 - Clone repo
 ```sh
-    git clone git@gitlab.entenso.com:vzheltukhin/moniic-ui-v3.git
+    git clone https://github.com/santaz1995/angular5-starter.git
 ```
 - Create local variables
 ```sh
@@ -14,7 +14,6 @@ In folder two files: environment.ts -for dev; environment.prod.ts for -prod
 
 ```sh
       backendUrl: 'http://localhost:8601/api',
-      frontendUrl: 'http://localhost:3000'
 ```
 - Start dev server
 ```sh 
