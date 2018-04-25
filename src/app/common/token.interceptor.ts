@@ -44,18 +44,42 @@ export class TokenInterceptor implements HttpInterceptor {
     if (auth.isAuthenticated()) {
       request = TokenInterceptor.authenticateRequest(request, auth.getToken());
     }
-    debugger
+
     return next.handle(request).do(() => {
     }, (error: HttpErrorResponse) => {
-      debugger
-      if (error.status === 500) {
-        this.notification.error('Error', 'Server Error');
-      } else if ((error.status === 406 || error.status === 409) && error.error.errorMessage) {
-        this.notification.error('Error', error.error.errorMessage);
-      } else {
-        auth.removeToken();
-        return this.router.navigate(['']);
-      }
+      this.handelError(error);
     });
+  }
+
+  /**
+   * @param {HttpErrorResponse} error
+   * @returns {Promise<boolean>}
+   */
+  private handelError(error: HttpErrorResponse): void {
+
+    switch (error.status) {
+      case 500: {
+        this.notification.error('Error', 'Server error');
+        break;
+      }
+      case 401: {
+        this.notification.error('Error', 'Server error');
+        break;
+      }
+      case 404: {
+        this.notification.error('Error', 'Server error');
+        break;
+      }
+      default: {
+
+        if (error.error.errorMessage) {
+          this.notification.error('Error', error.error.errorMessage);
+        } else {
+          this.notification.error('Error', 'Server error');
+        }
+
+        break;
+      }
+    }
   }
 }
