@@ -1,4 +1,4 @@
-## Project Monic UI v3 Angular 5.2
+## Project Angular 5.2
 
 - Clone repo
 ```sh
